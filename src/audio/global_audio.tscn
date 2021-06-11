@@ -1,0 +1,9 @@
+[gd_scene format=2]
+
+[node name="Control" type="Node2D"]
+
+[node name="MusicPlayer" type="AudioStreamPlayer" parent="."]
+bus = "Music"
+
+[node name="SoundPlayer" type="AudioStreamPlayer" parent="."]
+bus = "Sounds"
