@@ -315,10 +315,10 @@ __meta__ = {
 }
 
 [node name="jobs" type="VBoxContainer" parent="Game_GUI"]
-margin_left = 48.1349
-margin_top = 213.562
-margin_right = 223.135
-margin_bottom = 253.562
+margin_left = 17.2321
+margin_top = 79.0358
+margin_right = 250.232
+margin_bottom = 309.036
 custom_constants/separation = 10
 __meta__ = {
 "_edit_group_": true,
@@ -328,16 +328,15 @@ __meta__ = {
 [node name="chart_stars_job" parent="Game_GUI/jobs" instance=ExtResource( 3 )]
 anchor_right = 0.0
 anchor_bottom = 0.0
-margin_right = 233.0
+margin_right = 246.0
 margin_bottom = 30.0
 Job_Title = "Chart the Stars"
-Max_Occupancy = 2
 
 [node name="power_engines" parent="Game_GUI/jobs" instance=ExtResource( 3 )]
 anchor_right = 0.0
 anchor_bottom = 0.0
 margin_top = 40.0
-margin_right = 233.0
+margin_right = 246.0
 margin_bottom = 70.0
 Job_Title = "Power the Engines"
 
@@ -345,16 +344,17 @@ Job_Title = "Power the Engines"
 anchor_right = 0.0
 anchor_bottom = 0.0
 margin_top = 80.0
-margin_right = 233.0
+margin_right = 246.0
 margin_bottom = 110.0
 Job_Title = "Generate Power"
 Job_Type = 2
+Max_Occupancy = 2
 
 [node name="generate_food" parent="Game_GUI/jobs" instance=ExtResource( 3 )]
 anchor_right = 0.0
 anchor_bottom = 0.0
 margin_top = 120.0
-margin_right = 233.0
+margin_right = 246.0
 margin_bottom = 150.0
 Job_Title = "Generate Food"
 Job_Type = 3
@@ -363,7 +363,7 @@ Job_Type = 3
 anchor_right = 0.0
 anchor_bottom = 0.0
 margin_top = 160.0
-margin_right = 233.0
+margin_right = 246.0
 margin_bottom = 190.0
 Job_Title = "Reduce Stress"
 Job_Type = 4
@@ -372,7 +372,7 @@ Job_Type = 4
 anchor_right = 0.0
 anchor_bottom = 0.0
 margin_top = 200.0
-margin_right = 233.0
+margin_right = 246.0
 margin_bottom = 230.0
 Job_Title = "Reclaim Water"
 Job_Type = 5

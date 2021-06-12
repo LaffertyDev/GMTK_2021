@@ -1,17 +1,18 @@
 extends Node2D
 
 const ResourceManager = preload("res://src/game/resource_manager.gd")
+const PersonManager = preload("res://src/game/person_manager.gd")
 
 var current_cycle = 0
 
 var resource_manager = ResourceManager.ResourceManager.new()
+var person_manager = PersonManager.PersonManager.new()
 
 func _ready() -> void:
+	add_to_group("game_root")
 	var jobs = get_tree().get_nodes_in_group("jobs")
 	for job in jobs:
-		print('job')
-		var _1 = job.connect("decrement_job", self, "_on_job_decrement")
-		var _2 = job.connect("increment_job", self, "_on_job_increment")
+		var _1 = job.connect("job_assignment_changed", self, "_on_job_assignment_changed")
 	sync_ui(resource_manager)
 
 func _input(event) -> void:
@@ -28,46 +29,8 @@ func _on_next_cycle_button_pressed() -> void:
 	sync_ui(resource_manager)
 	handle_game_done(resource_manager)
 
-func _on_job_increment(jobType) -> void:
-	match(jobType):
-		(0):
-			pass
-		(1):
-			pass
-		(2):
-			resource_manager.ship_power_delta += 10
-			resource_manager.alien_power_delta += 10
-		(3):
-			resource_manager.human_food_delta += 10
-		(4):
-			resource_manager.human_stress_delta += 10
-			resource_manager.alien_stress_delta += 10
-		(5):
-			resource_manager.ship_water_delta += 10
-			resource_manager.human_water_delta += 10
-		_:
-			print("UNKNOWN JOB TYPE")
-	sync_ui(resource_manager)
-
-func _on_job_decrement(jobType) -> void:
-	match(jobType):
-		(0):
-			pass
-		(1):
-			pass
-		(2):
-			resource_manager.ship_power_delta -= 10
-			resource_manager.alien_power_delta -= 10
-		(3):
-			resource_manager.human_food_delta -= 10
-		(4):
-			resource_manager.human_stress_delta -= 10
-			resource_manager.alien_stress_delta -= 10
-		(5):
-			resource_manager.ship_water_delta -= 10
-			resource_manager.human_water_delta -= 10
-		_:
-			print("UNKNOWN JOB TYPE")
+func _on_job_assignment_changed() -> void:
+	resource_manager.recompute_deltas(person_manager.persons)
 	sync_ui(resource_manager)
 
 func sync_resources(resourceManager: ResourceManager.ResourceManager) -> void:
