@@ -50,16 +50,6 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="planets_visited" type="Label" parent="Game_GUI"]
-margin_left = 451.358
-margin_top = 41.7164
-margin_right = 572.358
-margin_bottom = 55.7164
-text = "Planets Visited: 2/10"
-__meta__ = {
-"_edit_use_anchors_": false
-}
-
 [node name="resources" type="HBoxContainer" parent="Game_GUI"]
 margin_left = 614.218
 margin_top = 29.591
@@ -323,20 +313,12 @@ margin_right = 246.0
 margin_bottom = 30.0
 Job_Title = "Chart the Stars"
 
-[node name="power_engines" parent="Game_GUI/jobs" instance=ExtResource( 3 )]
+[node name="generate_power" parent="Game_GUI/jobs" instance=ExtResource( 3 )]
 anchor_right = 0.0
 anchor_bottom = 0.0
 margin_top = 40.0
 margin_right = 246.0
 margin_bottom = 70.0
-Job_Title = "Power the Engines"
-
-[node name="generate_power" parent="Game_GUI/jobs" instance=ExtResource( 3 )]
-anchor_right = 0.0
-anchor_bottom = 0.0
-margin_top = 80.0
-margin_right = 246.0
-margin_bottom = 110.0
 Job_Title = "Generate Power"
 Job_Type = 2
 Max_Occupancy = 2
@@ -344,36 +326,36 @@ Max_Occupancy = 2
 [node name="generate_food" parent="Game_GUI/jobs" instance=ExtResource( 3 )]
 anchor_right = 0.0
 anchor_bottom = 0.0
-margin_top = 120.0
+margin_top = 80.0
 margin_right = 246.0
-margin_bottom = 150.0
+margin_bottom = 110.0
 Job_Title = "Generate Food"
 Job_Type = 3
 
 [node name="reduce_stress" parent="Game_GUI/jobs" instance=ExtResource( 3 )]
 anchor_right = 0.0
 anchor_bottom = 0.0
-margin_top = 160.0
+margin_top = 120.0
 margin_right = 246.0
-margin_bottom = 190.0
+margin_bottom = 150.0
 Job_Title = "Reduce Stress"
 Job_Type = 4
 
 [node name="reclaim_water" parent="Game_GUI/jobs" instance=ExtResource( 3 )]
 anchor_right = 0.0
 anchor_bottom = 0.0
-margin_top = 200.0
+margin_top = 160.0
 margin_right = 246.0
-margin_bottom = 230.0
+margin_bottom = 190.0
 Job_Title = "Reclaim Water"
 Job_Type = 5
 
 [node name="generate_mguffin" parent="Game_GUI/jobs" instance=ExtResource( 3 )]
 anchor_right = 0.0
 anchor_bottom = 0.0
-margin_top = 240.0
+margin_top = 200.0
 margin_right = 246.0
-margin_bottom = 270.0
+margin_bottom = 230.0
 Job_Title = "Mguffin"
 Job_Type = 6
 

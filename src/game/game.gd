@@ -39,9 +39,6 @@ func sync_resources(resourceManager: ResourceManager.ResourceManager) -> void:
 	var new_stars_charted = $Game_GUI/jobs/chart_stars_job.current_occupancy
 	resourceManager.stars_charted = min(resourceManager.stars_charted + new_stars_charted, resourceManager.stars_charted_cap)
 
-	var new_planets_explored = $Game_GUI/jobs/power_engines.current_occupancy
-	resourceManager.planets_visited = min(resourceManager.planets_visited + new_planets_explored, resourceManager.planets_visited_cap)
-
 	var delta_ship = min(resourceManager.alien_power_delta, 0) + min(resourceManager.human_water_delta, 0)
 	resourceManager.ship_hull = max(resourceManager.ship_hull + delta_ship, 0)
 
@@ -54,7 +51,6 @@ func sync_resources(resourceManager: ResourceManager.ResourceManager) -> void:
 func sync_ui(resourceManager: ResourceManager.ResourceManager) -> void:
 	$Game_GUI/cycle_info.set_text("Cycle: %d" % [current_cycle])
 	$Game_GUI/stars_charted.set_text("Stars Charted: %d / %d" % [resourceManager.stars_charted, resourceManager.stars_charted_cap])
-	$Game_GUI/planets_visited.set_text("Planets Visited: %d / %d" % [resourceManager.planets_visited, resourceManager.planets_visited_cap])
 
 	$Game_GUI/resources/ship_resources/ship_hull.value = resourceManager.ship_hull
 	$Game_GUI/resources/ship_resources/ship_power_label.set_text("Power: %d" % [resourceManager.alien_power_delta])
@@ -71,7 +67,7 @@ func sync_ui(resourceManager: ResourceManager.ResourceManager) -> void:
 	$Game_GUI/resources/human_resources/human_stress_label.set_text("Stress: %d" % [resourceManager.human_stress_delta])
 
 func handle_game_done(resourceManager: ResourceManager.ResourceManager) -> void:
-	if (resourceManager.planets_visited == resourceManager.planets_visited_cap):
+	if (resourceManager.stars_charted == resourceManager.stars_charted_cap):
 		var err = get_tree().change_scene("res://src/game/menu_victory.tscn")
 		if err != OK:
 			print("There was a failure changing the scene")

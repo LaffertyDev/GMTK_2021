@@ -17,8 +17,6 @@ class ResourceManager:
 	var current_cycle = 0
 	var stars_charted = 0
 	var stars_charted_cap = 10
-	var planets_visited = 0
-	var planets_visited_cap = 10
 
 	func recompute_deltas(persons) -> void:
 		self.alien_power_delta = -3
