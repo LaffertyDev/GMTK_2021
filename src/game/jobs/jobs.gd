@@ -21,7 +21,12 @@ func _on_assign_pressed() -> void:
 	var personManager = get_tree().get_nodes_in_group("game_root")[0].person_manager
 	var unassignedPersons = personManager.get_unassigned_persons()
 	for person in unassignedPersons:
-		job_assignment_popup.add_item("%s %d %s" % [person.name, 10, JobTypes.JobTypes.keys()[Job_Type + 1]], person.id)
+		var job_assignment_string = person.name
+		var resources_affected = _get_resources_affected_by_job(Job_Type)
+		for resource_affected in resources_affected:
+			var individual_affect = person.get_individual_resource_effect(resource_affected)
+			job_assignment_string += " " + Enums.ShipResources.keys()[resource_affected] + " " + str(individual_affect)
+			job_assignment_popup.add_item(job_assignment_string, person.id)
 
 	add_child(job_assignment_popup)
 	job_assignment_popup.popup_centered()
@@ -46,7 +51,12 @@ func _on_unassign_pressed() -> void:
 	var personManager = get_tree().get_nodes_in_group("game_root")[0].person_manager
 	var personsAssignedTo = personManager.get_persons_assigned_to(Job_Type)
 	for person in personsAssignedTo:
-		job_unassignment_popup.add_item("%s %d %s" % [person.name, -10, JobTypes.JobTypes.keys()[Job_Type]], person.id)
+		var job_unassignment_string = person.name
+		var resources_affected = _get_resources_affected_by_job(Job_Type)
+		for resource_affected in resources_affected:
+			var individual_affect = -(person.get_individual_resource_effect(resource_affected)) # negative because its opposite because we're removing the person
+			job_unassignment_string += " " + Enums.ShipResources.keys()[resource_affected] + " " + str(individual_affect)
+		job_unassignment_popup.add_item(job_unassignment_string, person.id)
 
 	add_child(job_unassignment_popup)
 	job_unassignment_popup.popup_centered()
@@ -70,28 +80,46 @@ func _on_unassign_selected(id: int) -> void:
 	if (current_occupancy == 0):
 		$unassign.hide()
 
+
+func _get_resources_affected_by_job(jobType: int) -> Array:
+	match(jobType):
+		(JobTypes.JobTypes.invalid):
+			return []
+		(JobTypes.JobTypes.chart_stars):
+			return []
+		(JobTypes.JobTypes.generate_power):
+			return [Enums.ShipResources.POWER]
+		(JobTypes.JobTypes.generate_food):
+			return [Enums.ShipResources.FOOD]
+		(JobTypes.JobTypes.reduce_stress):
+			return [Enums.ShipResources.STRESS]
+		(JobTypes.JobTypes.reclaim_water):
+			return [Enums.ShipResources.WATER]
+		(JobTypes.JobTypes.mguffin):
+			return [Enums.ShipResources.MGUFFIN]
+		_:
+			return []
+
 # Returns an array of resource types and how much they should be adjusted by
 func adjust_resources(resourceManager: ResourceManager) -> void:
+	var affected_resources = _get_resources_affected_by_job(Job_Type)
 	for person in assigned_persons:
-		match(Job_Type):
-			(JobTypes.JobTypes.invalid):
-				pass
-			(JobTypes.JobTypes.chart_stars):
-				pass
-			(JobTypes.JobTypes.generate_power):
-				resourceManager.alien_power_delta += 10
-			(JobTypes.JobTypes.generate_food):
-				resourceManager.human_food_delta += 10
-			(JobTypes.JobTypes.reduce_stress):
-				if person.race == Enums.Race.Human:
-					resourceManager.human_stress_delta += 10
-				if person.race == Enums.Race.Alien:
-					resourceManager.alien_stress_delta += 10
-			(JobTypes.JobTypes.reclaim_water):
-				resourceManager.human_water_delta += 10
-			(JobTypes.JobTypes.mguffin):
-				resourceManager.alien_mguffin_delta += 10
-			_:
-				print("UNKNOWN JOB TYPE")
-				print(person.name)
-				print(person.assignment)
+		for affected_resource in affected_resources:
+			var individual_effect = person.get_individual_resource_effect(affected_resource)
+			match(affected_resource):
+				# code smell... need to link the Resources with the actual Resource in the Resource Manager
+				(Enums.ShipResources.POWER):
+					resourceManager.alien_power_delta += individual_effect
+				(Enums.ShipResources.FOOD):
+					resourceManager.human_food_delta += individual_effect
+				(Enums.ShipResources.STRESS):
+					if person.race == Enums.Race.Human:
+						resourceManager.human_stress_delta += individual_effect
+					if person.race == Enums.Race.Alien:
+						resourceManager.alien_stress_delta += individual_effect
+				(Enums.ShipResources.WATER):
+					resourceManager.human_water_delta += individual_effect
+				(Enums.ShipResources.MGUFFIN):
+					resourceManager.alien_mguffin_delta += individual_effect
+				_:
+					print("UNKNOWN RESOURCE")

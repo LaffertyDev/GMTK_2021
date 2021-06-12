@@ -1,6 +1,6 @@
 class_name ResourceManager
 
-const PersonManager = preload("res://src/game/person_manager.gd")
+const PersonManager = preload("res://src/game/people/person_manager.gd")
 const Enums = preload("res://src/game/enums.gd")
 
 var ship_hull = 100

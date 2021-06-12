@@ -12,22 +12,34 @@ _global_script_classes=[ {
 "base": "Reference",
 "class": "Person",
 "language": "GDScript",
-"path": "res://src/game/person.gd"
+"path": "res://src/game/people/person.gd"
 }, {
 "base": "Reference",
 "class": "PersonManager",
 "language": "GDScript",
-"path": "res://src/game/person_manager.gd"
+"path": "res://src/game/people/person_manager.gd"
 }, {
 "base": "Reference",
 "class": "ResourceManager",
 "language": "GDScript",
 "path": "res://src/game/resource_manager.gd"
+}, {
+"base": "Reference",
+"class": "Trait",
+"language": "GDScript",
+"path": "res://src/game/traits/trait.gd"
+}, {
+"base": "Reference",
+"class": "TraitBuilder",
+"language": "GDScript",
+"path": "res://src/game/traits/trait_builder.gd"
 } ]
 _global_script_class_icons={
 "Person": "",
 "PersonManager": "",
-"ResourceManager": ""
+"ResourceManager": "",
+"Trait": "",
+"TraitBuilder": ""
 }
 
 [application]

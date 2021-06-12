@@ -1,7 +1,7 @@
 extends Node2D
 
 const ResourceManager = preload("res://src/game/resource_manager.gd")
-const PersonManager = preload("res://src/game/person_manager.gd")
+const PersonManager = preload("res://src/game/people/person_manager.gd")
 
 var current_cycle = 0
 
