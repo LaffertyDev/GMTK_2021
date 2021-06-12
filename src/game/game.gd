@@ -29,7 +29,6 @@ func _on_next_cycle_button_pressed() -> void:
 	handle_game_done(resource_manager)
 
 func _on_job_increment(jobType) -> void:
-	print('increment')
 	match(jobType):
 		(0):
 			pass
