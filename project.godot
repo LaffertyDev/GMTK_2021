@@ -43,6 +43,11 @@ _global_script_classes=[ {
 "class": "TraitBuilder",
 "language": "GDScript",
 "path": "res://src/game/traits/trait_builder.gd"
+}, {
+"base": "Reference",
+"class": "TraitManager",
+"language": "GDScript",
+"path": "res://src/game/traits/trait_manager.gd"
 } ]
 _global_script_class_icons={
 "PairedTrait": "",
@@ -51,7 +56,8 @@ _global_script_class_icons={
 "PersonManager": "",
 "ResourceManager": "",
 "Trait": "",
-"TraitBuilder": ""
+"TraitBuilder": "",
+"TraitManager": ""
 }
 
 [application]

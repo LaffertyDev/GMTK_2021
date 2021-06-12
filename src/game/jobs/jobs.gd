@@ -2,6 +2,7 @@ extends Control
 
 const JobTypes = preload("res://src/game/jobs/job_types.gd")
 const Enums = preload("res://src/game/enums.gd")
+const TraitManager = preload("res://src/game/traits/trait_manager.gd")
 
 export(String) var Job_Title = "{{ Job Label }}"
 export(JobTypes.JobTypes) var Job_Type = JobTypes.JobTypes.chart_stars
@@ -24,27 +25,8 @@ func _ready() -> void:
 func _on_assignment_changed():
 	emit_signal("job_assignment_changed")
 
-func _get_resources_affected_by_job(jobType: int) -> Array:
-	match(jobType):
-		(JobTypes.JobTypes.invalid):
-			return []
-		(JobTypes.JobTypes.chart_stars):
-			return []
-		(JobTypes.JobTypes.generate_power):
-			return [Enums.ShipResources.POWER]
-		(JobTypes.JobTypes.generate_food):
-			return [Enums.ShipResources.FOOD]
-		(JobTypes.JobTypes.reduce_stress):
-			return [Enums.ShipResources.STRESS]
-		(JobTypes.JobTypes.reclaim_water):
-			return [Enums.ShipResources.WATER]
-		(JobTypes.JobTypes.mguffin):
-			return [Enums.ShipResources.MGUFFIN]
-		_:
-			return []
-
 func adjust_resources(resourceManager: ResourceManager) -> void:
-	var affected_resources = _get_resources_affected_by_job(Job_Type)
+	var affected_resources = TraitManager.get_resources_affected_by_job(Job_Type)
 	var personManager = get_tree().get_nodes_in_group("game_root")[0].person_manager
 	var assigned_persons = personManager.get_persons_assigned_to(Job_Type)
 	for person in assigned_persons:

@@ -3,6 +3,7 @@ extends Control
 const Person = preload("res://src/game/people/person.gd")
 const Enums = preload("res://src/game/enums.gd")
 const JobTypes = preload("res://src/game/jobs/job_types.gd")
+const TraitManager = preload("res://src/game/traits/trait_manager.gd")
 
 signal job_assignment_changed()
 var assigned_person: Person
@@ -22,11 +23,9 @@ func _on_button_assign_pressed():
 		if job_type == JobTypes.JobTypes.chart_stars:
 			job_assignment_popup.add_item(person.name, person.id)
 		else:
-			var resources_affected = _get_resources_affected_by_job(job_type)
-			for resource_affected in resources_affected:
-				var individual_affect = person.get_individual_resource_effect(resource_affected)
-				job_assignment_string += " " + Enums.ShipResources.keys()[resource_affected] + " " + str(individual_affect)
-				job_assignment_popup.add_item(job_assignment_string, person.id)
+			var resources_affected = TraitManager.get_resources_affected_by_job(job_type)
+			job_assignment_string += " " + TraitManager.get_traits_description(person, TraitManager.get_resources_affected_by_job(job_type))
+			job_assignment_popup.add_item(job_assignment_string, person.id)
 
 	add_child(job_assignment_popup)
 	job_assignment_popup.popup_centered()
@@ -42,7 +41,9 @@ func _on_assignment_selected(id: int) -> void:
 	$HBoxContainer/button_unassign.show()
 	$HBoxContainer/slot_name.show()
 	$HBoxContainer/slot_icon.show()
+	$HBoxContainer/slot_effects.show()
 	$HBoxContainer/slot_name.set_text(assigned_person.name)
+	$HBoxContainer/slot_effects.set_text(TraitManager.get_traits_description(person, TraitManager.get_resources_affected_by_job(job_type)))
 	emit_signal("job_assignment_changed")
 		
 func _on_button_unassign_pressed():
@@ -52,24 +53,5 @@ func _on_button_unassign_pressed():
 	$HBoxContainer/button_unassign.hide()
 	$HBoxContainer/slot_name.hide()
 	$HBoxContainer/slot_icon.hide()
+	$HBoxContainer/slot_effects.hide()
 	emit_signal("job_assignment_changed")
-
-func _get_resources_affected_by_job(jobType: int) -> Array:
-	match(jobType):
-		(JobTypes.JobTypes.invalid):
-			return []
-		(JobTypes.JobTypes.chart_stars):
-			return []
-		(JobTypes.JobTypes.generate_power):
-			return [Enums.ShipResources.POWER]
-		(JobTypes.JobTypes.generate_food):
-			return [Enums.ShipResources.FOOD]
-		(JobTypes.JobTypes.reduce_stress):
-			return [Enums.ShipResources.STRESS]
-		(JobTypes.JobTypes.reclaim_water):
-			return [Enums.ShipResources.WATER]
-		(JobTypes.JobTypes.mguffin):
-			return [Enums.ShipResources.MGUFFIN]
-		_:
-			return []
-	
