@@ -2,11 +2,13 @@ extends Node2D
 
 const ResourceManager = preload("res://src/game/resource_manager.gd")
 const PersonManager = preload("res://src/game/people/person_manager.gd")
+const PairedTraitManager = preload("res://src/game/traits/paired_trait_manager.gd")
 
 var current_cycle = 0
 
 var resource_manager = ResourceManager.new()
 var person_manager = PersonManager.new()
+var paired_trait_manager = PairedTraitManager.new()
 
 func _ready() -> void:
 	add_to_group("game_root")

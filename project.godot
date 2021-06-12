@@ -10,6 +10,16 @@ config_version=4
 
 _global_script_classes=[ {
 "base": "Reference",
+"class": "PairedTrait",
+"language": "GDScript",
+"path": "res://src/game/traits/paired_trait.gd"
+}, {
+"base": "Reference",
+"class": "PairedTraitManager",
+"language": "GDScript",
+"path": "res://src/game/traits/paired_trait_manager.gd"
+}, {
+"base": "Reference",
 "class": "Person",
 "language": "GDScript",
 "path": "res://src/game/people/person.gd"
@@ -35,6 +45,8 @@ _global_script_classes=[ {
 "path": "res://src/game/traits/trait_builder.gd"
 } ]
 _global_script_class_icons={
+"PairedTrait": "",
+"PairedTraitManager": "",
 "Person": "",
 "PersonManager": "",
 "ResourceManager": "",

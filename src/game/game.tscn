@@ -198,93 +198,6 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="human_leaders" type="VBoxContainer" parent="Game_GUI"]
-margin_left = 491.488
-margin_top = 83.8523
-margin_right = 549.488
-margin_bottom = 169.852
-__meta__ = {
-"_edit_group_": true,
-"_edit_use_anchors_": false
-}
-
-[node name="Human 1" type="Label" parent="Game_GUI/human_leaders"]
-margin_right = 58.0
-margin_bottom = 14.0
-text = "Human 1"
-
-[node name="Human 2" type="Label" parent="Game_GUI/human_leaders"]
-margin_top = 18.0
-margin_right = 58.0
-margin_bottom = 32.0
-text = "Human 2"
-
-[node name="Human 3" type="Label" parent="Game_GUI/human_leaders"]
-margin_top = 36.0
-margin_right = 58.0
-margin_bottom = 50.0
-text = "Human 3"
-
-[node name="Human 4" type="Label" parent="Game_GUI/human_leaders"]
-margin_top = 54.0
-margin_right = 58.0
-margin_bottom = 68.0
-text = "Human 4"
-
-[node name="Human 5" type="Label" parent="Game_GUI/human_leaders"]
-margin_top = 72.0
-margin_right = 58.0
-margin_bottom = 86.0
-text = "Human 5"
-
-[node name="alien_leaders" type="VBoxContainer" parent="Game_GUI"]
-margin_left = 489.291
-margin_top = 179.806
-margin_right = 547.291
-margin_bottom = 265.806
-__meta__ = {
-"_edit_group_": true,
-"_edit_use_anchors_": false
-}
-
-[node name="Alien 1" type="Label" parent="Game_GUI/alien_leaders"]
-margin_right = 58.0
-margin_bottom = 14.0
-text = "Alien 1"
-
-[node name="Alien 2" type="Label" parent="Game_GUI/alien_leaders"]
-margin_top = 18.0
-margin_right = 58.0
-margin_bottom = 32.0
-text = "Alien 2"
-
-[node name="Alien 3" type="Label" parent="Game_GUI/alien_leaders"]
-margin_top = 36.0
-margin_right = 58.0
-margin_bottom = 50.0
-text = "Alien 3"
-
-[node name="ai_cores" type="VBoxContainer" parent="Game_GUI"]
-margin_left = 416.776
-margin_top = 81.6549
-margin_right = 475.776
-margin_bottom = 167.655
-__meta__ = {
-"_edit_group_": true,
-"_edit_use_anchors_": false
-}
-
-[node name="AI Core 1" type="Label" parent="Game_GUI/ai_cores"]
-margin_right = 59.0
-margin_bottom = 14.0
-text = "AI Core 1"
-
-[node name="AI Core 2" type="Label" parent="Game_GUI/ai_cores"]
-margin_top = 18.0
-margin_right = 59.0
-margin_bottom = 32.0
-text = "AI Core 2"
-
 [node name="cycle_info" type="Label" parent="Game_GUI"]
 margin_left = 931.359
 margin_top = 711.0
@@ -307,55 +220,43 @@ __meta__ = {
 }
 
 [node name="chart_stars_job" parent="Game_GUI/jobs" instance=ExtResource( 3 )]
-anchor_right = 0.0
-anchor_bottom = 0.0
-margin_right = 246.0
-margin_bottom = 30.0
+margin_right = 400.0
+margin_bottom = 67.0
 Job_Title = "Chart the Stars"
 
 [node name="generate_power" parent="Game_GUI/jobs" instance=ExtResource( 3 )]
-anchor_right = 0.0
-anchor_bottom = 0.0
-margin_top = 40.0
-margin_right = 246.0
-margin_bottom = 70.0
+margin_top = 77.0
+margin_right = 400.0
+margin_bottom = 144.0
 Job_Title = "Generate Power"
 Job_Type = 1
 Max_Occupancy = 2
 
 [node name="generate_food" parent="Game_GUI/jobs" instance=ExtResource( 3 )]
-anchor_right = 0.0
-anchor_bottom = 0.0
-margin_top = 80.0
-margin_right = 246.0
-margin_bottom = 110.0
+margin_top = 154.0
+margin_right = 400.0
+margin_bottom = 221.0
 Job_Title = "Generate Food"
 Job_Type = 2
 
 [node name="reduce_stress" parent="Game_GUI/jobs" instance=ExtResource( 3 )]
-anchor_right = 0.0
-anchor_bottom = 0.0
-margin_top = 120.0
-margin_right = 246.0
-margin_bottom = 150.0
+margin_top = 231.0
+margin_right = 400.0
+margin_bottom = 298.0
 Job_Title = "Reduce Stress"
 Job_Type = 3
 
 [node name="reclaim_water" parent="Game_GUI/jobs" instance=ExtResource( 3 )]
-anchor_right = 0.0
-anchor_bottom = 0.0
-margin_top = 160.0
-margin_right = 246.0
-margin_bottom = 190.0
+margin_top = 308.0
+margin_right = 400.0
+margin_bottom = 375.0
 Job_Title = "Reclaim Water"
 Job_Type = 4
 
 [node name="generate_mguffin" parent="Game_GUI/jobs" instance=ExtResource( 3 )]
-anchor_right = 0.0
-anchor_bottom = 0.0
-margin_top = 200.0
-margin_right = 246.0
-margin_bottom = 230.0
+margin_top = 385.0
+margin_right = 400.0
+margin_bottom = 452.0
 Job_Title = "Mguffin"
 Job_Type = 5
 
