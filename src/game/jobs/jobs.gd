@@ -11,6 +11,7 @@ signal job_assignment_changed()
 
 func _ready() -> void:
 	add_to_group("jobs")
+	add_to_group("cyclables")
 	var job_assignment_res = load("res://src/game/jobs/job_assignment_slot.tscn")
 	for _x in range(0, Max_Occupancy):
 		var job_assignment = job_assignment_res.instance()
@@ -72,6 +73,15 @@ func adjust_resources(resourceManager: ResourceManager) -> void:
 		var pairedTrait = pairedTraitManager.get_pair_effect(assigned_persons[0], assigned_persons[1])
 		pairedTrait.apply_pair_effect(resourceManager)
 		$paired_trait_display.set_paired_trait(pairedTrait)
-		$paired_trait_display.show()
 	else:
-		$paired_trait_display.hide()
+		$paired_trait_display.set_paired_trait(null)
+
+func _on_cycle():
+	if (Job_Type == JobTypes.JobTypes.chart_stars):
+		var resourceManager = get_tree().get_nodes_in_group("game_root")[0].resource_manager
+		var personManager = get_tree().get_nodes_in_group("game_root")[0].person_manager
+		var assigned_persons = personManager.get_persons_assigned_to(Job_Type)
+		print(assigned_persons.size())
+		if (assigned_persons.size() > 0):
+			resourceManager.stars_charted = min(resourceManager.stars_charted + 1, resourceManager.stars_charted_cap)
+			print(resourceManager.stars_charted)

@@ -19,11 +19,14 @@ func _on_button_assign_pressed():
 	var unassignedPersons = personManager.get_unassigned_persons()
 	for person in unassignedPersons:
 		var job_assignment_string = person.name
-		var resources_affected = _get_resources_affected_by_job(job_type)
-		for resource_affected in resources_affected:
-			var individual_affect = person.get_individual_resource_effect(resource_affected)
-			job_assignment_string += " " + Enums.ShipResources.keys()[resource_affected] + " " + str(individual_affect)
-			job_assignment_popup.add_item(job_assignment_string, person.id)
+		if job_type == JobTypes.JobTypes.chart_stars:
+			job_assignment_popup.add_item(person.name, person.id)
+		else:
+			var resources_affected = _get_resources_affected_by_job(job_type)
+			for resource_affected in resources_affected:
+				var individual_affect = person.get_individual_resource_effect(resource_affected)
+				job_assignment_string += " " + Enums.ShipResources.keys()[resource_affected] + " " + str(individual_affect)
+				job_assignment_popup.add_item(job_assignment_string, person.id)
 
 	add_child(job_assignment_popup)
 	job_assignment_popup.popup_centered()

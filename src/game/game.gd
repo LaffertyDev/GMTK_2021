@@ -40,9 +40,6 @@ func _on_job_assignment_changed() -> void:
 func sync_resources(resourceManager: ResourceManager) -> void:
 	current_cycle += 1
 
-	var new_stars_charted = $Game_GUI/jobs/chart_stars_job.current_occupancy
-	resourceManager.stars_charted = min(resourceManager.stars_charted + new_stars_charted, resourceManager.stars_charted_cap)
-
 	var delta_ship = min(resourceManager.alien_power_delta, 0) + min(resourceManager.human_water_delta, 0)
 	resourceManager.ship_hull = max(resourceManager.ship_hull + delta_ship, 0)
 
@@ -51,6 +48,8 @@ func sync_resources(resourceManager: ResourceManager) -> void:
 
 	var delta_human = min(resourceManager.human_food_delta, 0) + min(resourceManager.human_water_delta, 0) + min(resourceManager.human_stress_delta, 0)
 	resourceManager.human_lifepods = max(resourceManager.human_lifepods + delta_human, 0)
+
+	get_tree().call_group_flags(2, "cyclables", "_on_cycle") # 2 is a magic enum for REAL TIME
 
 func sync_ui(resourceManager: ResourceManager) -> void:
 	$Game_GUI/cycle_info.set_text("Cycle: %d" % [current_cycle])
