@@ -42,7 +42,7 @@ func sync_resources(resourceManager: ResourceManager.ResourceManager) -> void:
 	var new_planets_explored = $Game_GUI/jobs/power_engines.current_occupancy
 	resourceManager.planets_visited = min(resourceManager.planets_visited + new_planets_explored, resourceManager.planets_visited_cap)
 
-	var delta_ship = min(resourceManager.ship_power_delta, 0) + min(resourceManager.ship_fuel_delta, 0) + min(resourceManager.ship_water_delta, 0)
+	var delta_ship = min(resourceManager.alien_power_delta, 0) + min(resourceManager.human_water_delta, 0)
 	resourceManager.ship_hull = max(resourceManager.ship_hull + delta_ship, 0)
 
 	var delta_alien = min(resourceManager.alien_power_delta, 0) + min(resourceManager.alien_stress_delta, 0) + min(resourceManager.alien_mguffin_delta, 0)
@@ -57,9 +57,8 @@ func sync_ui(resourceManager: ResourceManager.ResourceManager) -> void:
 	$Game_GUI/planets_visited.set_text("Planets Visited: %d / %d" % [resourceManager.planets_visited, resourceManager.planets_visited_cap])
 
 	$Game_GUI/resources/ship_resources/ship_hull.value = resourceManager.ship_hull
-	$Game_GUI/resources/ship_resources/ship_power_label.set_text("Power: %d" % [resourceManager.ship_power_delta])
-	$Game_GUI/resources/ship_resources/ship_fuel_label.set_text("Fuel: %d" % [resourceManager.ship_fuel_delta])
-	$Game_GUI/resources/ship_resources/ship_water_label.set_text("Water: %d" % [resourceManager.ship_water_delta])
+	$Game_GUI/resources/ship_resources/ship_power_label.set_text("Power: %d" % [resourceManager.alien_power_delta])
+	$Game_GUI/resources/ship_resources/ship_water_label.set_text("Water: %d" % [resourceManager.human_water_delta])
 
 	$Game_GUI/resources/alien_resources/alien_eggs.value = resourceManager.alien_eggs
 	$Game_GUI/resources/alien_resources/alien_power_label.set_text("Power: %d" % [resourceManager.alien_power_delta])
@@ -77,7 +76,7 @@ func handle_game_done(resourceManager: ResourceManager.ResourceManager) -> void:
 		if err != OK:
 			print("There was a failure changing the scene")
 
-	if (resourceManager.ship_hull == 0):
+	if (resourceManager.ship_hull == 0 || (resourceManager.human_lifepods == 0 && resourceManager.alien_eggs == 0)):
 		var err = get_tree().change_scene("res://src/game/menu_defeat.tscn")
 		if err != OK:
 			print("There was a failure changing the scene")

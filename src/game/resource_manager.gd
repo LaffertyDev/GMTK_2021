@@ -2,9 +2,6 @@ const PersonManager = preload("res://src/game/person_manager.gd")
 const Enums = preload("res://src/game/enums.gd")
 
 class ResourceManager:
-	var ship_power_delta = -3
-	var ship_water_delta = -3
-	var ship_fuel_delta = -3
 	var ship_hull = 100
 
 	var alien_power_delta = -3
@@ -24,9 +21,6 @@ class ResourceManager:
 	var planets_visited_cap = 10
 
 	func recompute_deltas(persons) -> void:
-		self.ship_power_delta = -3
-		self.ship_water_delta = -3
-		self.ship_fuel_delta = -3
 		self.alien_power_delta = -3
 		self.alien_stress_delta = -3
 		self.alien_mguffin_delta = -3
@@ -43,27 +37,18 @@ class ResourceManager:
 				(1):
 					pass
 				(2):
-					if (person.race == Enums.Race.Robot):
-						self.ship_power_delta += 10
-					if person.race == Enums.Race.Alien:
-						self.alien_power_delta += 10
+					self.alien_power_delta += 10
 				(3):
-					if person.race == Enums.Race.Human:
-						self.human_food_delta += 10
+					self.human_food_delta += 10
 				(4):
 					if person.race == Enums.Race.Human:
 						self.human_stress_delta += 10
-
 					if person.race == Enums.Race.Alien:
 						self.alien_stress_delta += 10
 				(5):
-					if person.race == Enums.Race.Robot:
-						self.ship_water_delta += 10
-					if person.race == Enums.Race.Human:
-						self.human_water_delta += 10
+					self.human_water_delta += 10
 				(6):
-					if person.race == Enums.Race.Alien:
-						self.alien_mguffin_delta += 10
+					self.alien_mguffin_delta += 10
 				_:
 					print("UNKNOWN JOB TYPE")
 					print(person.name)

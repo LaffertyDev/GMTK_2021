@@ -159,15 +159,6 @@ margin_right = 107.0
 margin_bottom = 86.0
 text = "Water"
 
-[node name="ship_fuel_label" type="Label" parent="Game_GUI/resources/ship_resources"]
-margin_top = 90.0
-margin_right = 107.0
-margin_bottom = 104.0
-text = "Fuel"
-__meta__ = {
-"_edit_use_anchors_": false
-}
-
 [node name="alien_resources" type="VBoxContainer" parent="Game_GUI/resources"]
 margin_left = 265.0
 margin_right = 380.0

@@ -8,9 +8,10 @@ class PersonManager:
 		persons.append(Person.Build(2, "Human 2", Enums.Race.Human))
 		persons.append(Person.Build(3, "Human 3", Enums.Race.Human))
 		persons.append(Person.Build(4, "Human 4", Enums.Race.Human))
-		persons.append(Person.Build(5, "Human 5", Enums.Race.Human))
 		persons.append(Person.Build(6, "Alien 1", Enums.Race.Alien))
+		persons.append(Person.Build(6, "Alien 2", Enums.Race.Alien))
 		persons.append(Person.Build(7, "Robot 1", Enums.Race.Robot))
+		persons.append(Person.Build(8, "Robot 2", Enums.Race.Robot))
 
 	func get_person_by_id(id: int) -> Person:
 		for person in persons:
