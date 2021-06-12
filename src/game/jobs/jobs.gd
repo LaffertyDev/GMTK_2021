@@ -1,19 +1,13 @@
 extends Control
 
-enum JobTypes {
-	chart_stars = 0,
-	power_engines = 1,
-	generate_power = 2,
-	generate_food = 3,
-	reduce_stress = 4,
-	reclaim_water = 5,
-	mguffin = 6
-}
+const JobTypes = preload("res://src/game/jobs/job_types.gd")
+const Enums = preload("res://src/game/enums.gd")
 
 export(String) var Job_Title = "{{ Job Label }}"
-export(JobTypes) var Job_Type = JobTypes.chart_stars
+export(JobTypes.JobTypes) var Job_Type = JobTypes.JobTypes.chart_stars
 export(int) var Max_Occupancy = 1
 var current_occupancy = 0
+var assigned_persons = []
 
 signal job_assignment_changed()
 
@@ -38,6 +32,7 @@ func _on_assignment_selected(id: int) -> void:
 	var personManager = get_tree().get_nodes_in_group("game_root")[0].person_manager
 	var person = personManager.get_person_by_id(id)
 	personManager.assign_person(person, Job_Type)
+	assigned_persons.append(person)
 	current_occupancy += 1
 	$job_occupancy.set_text(str(current_occupancy))
 	emit_signal("job_assignment_changed")
@@ -61,6 +56,11 @@ func _on_unassign_pressed() -> void:
 func _on_unassign_selected(id: int) -> void:
 	var personManager = get_tree().get_nodes_in_group("game_root")[0].person_manager
 	var person = personManager.get_person_by_id(id)
+	for x in range(0, assigned_persons.size()):
+		if (assigned_persons[x].id == person.id):
+			assigned_persons.remove(x)
+			return
+
 	personManager.unassign_person(person)
 	current_occupancy -= 1
 	$job_occupancy.set_text(str(current_occupancy))
@@ -69,3 +69,29 @@ func _on_unassign_selected(id: int) -> void:
 	$assign.show()
 	if (current_occupancy == 0):
 		$unassign.hide()
+
+# Returns an array of resource types and how much they should be adjusted by
+func adjust_resources(resourceManager: ResourceManager) -> void:
+	for person in assigned_persons:
+		match(Job_Type):
+			(JobTypes.JobTypes.invalid):
+				pass
+			(JobTypes.JobTypes.chart_stars):
+				pass
+			(JobTypes.JobTypes.generate_power):
+				resourceManager.alien_power_delta += 10
+			(JobTypes.JobTypes.generate_food):
+				resourceManager.human_food_delta += 10
+			(JobTypes.JobTypes.reduce_stress):
+				if person.race == Enums.Race.Human:
+					resourceManager.human_stress_delta += 10
+				if person.race == Enums.Race.Alien:
+					resourceManager.alien_stress_delta += 10
+			(JobTypes.JobTypes.reclaim_water):
+				resourceManager.human_water_delta += 10
+			(JobTypes.JobTypes.mguffin):
+				resourceManager.alien_mguffin_delta += 10
+			_:
+				print("UNKNOWN JOB TYPE")
+				print(person.name)
+				print(person.assignment)

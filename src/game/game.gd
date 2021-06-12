@@ -5,8 +5,8 @@ const PersonManager = preload("res://src/game/person_manager.gd")
 
 var current_cycle = 0
 
-var resource_manager = ResourceManager.ResourceManager.new()
-var person_manager = PersonManager.PersonManager.new()
+var resource_manager = ResourceManager.new()
+var person_manager = PersonManager.new()
 
 func _ready() -> void:
 	add_to_group("game_root")
@@ -30,10 +30,12 @@ func _on_next_cycle_button_pressed() -> void:
 	handle_game_done(resource_manager)
 
 func _on_job_assignment_changed() -> void:
-	resource_manager.recompute_deltas(person_manager.persons)
+	var jobs = get_tree().get_nodes_in_group("jobs")
+	resource_manager.recompute_deltas(jobs)
+
 	sync_ui(resource_manager)
 
-func sync_resources(resourceManager: ResourceManager.ResourceManager) -> void:
+func sync_resources(resourceManager: ResourceManager) -> void:
 	current_cycle += 1
 
 	var new_stars_charted = $Game_GUI/jobs/chart_stars_job.current_occupancy
@@ -48,7 +50,7 @@ func sync_resources(resourceManager: ResourceManager.ResourceManager) -> void:
 	var delta_human = min(resourceManager.human_food_delta, 0) + min(resourceManager.human_water_delta, 0) + min(resourceManager.human_stress_delta, 0)
 	resourceManager.human_lifepods = max(resourceManager.human_lifepods + delta_human, 0)
 
-func sync_ui(resourceManager: ResourceManager.ResourceManager) -> void:
+func sync_ui(resourceManager: ResourceManager) -> void:
 	$Game_GUI/cycle_info.set_text("Cycle: %d" % [current_cycle])
 	$Game_GUI/stars_charted.set_text("Stars Charted: %d / %d" % [resourceManager.stars_charted, resourceManager.stars_charted_cap])
 
@@ -66,7 +68,7 @@ func sync_ui(resourceManager: ResourceManager.ResourceManager) -> void:
 	$Game_GUI/resources/human_resources/human_water_label.set_text("Water: %d" % [resourceManager.human_water_delta])
 	$Game_GUI/resources/human_resources/human_stress_label.set_text("Stress: %d" % [resourceManager.human_stress_delta])
 
-func handle_game_done(resourceManager: ResourceManager.ResourceManager) -> void:
+func handle_game_done(resourceManager: ResourceManager) -> void:
 	if (resourceManager.stars_charted == resourceManager.stars_charted_cap):
 		var err = get_tree().change_scene("res://src/game/menu_victory.tscn")
 		if err != OK:

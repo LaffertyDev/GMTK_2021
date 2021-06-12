@@ -8,6 +8,28 @@
 
 config_version=4
 
+_global_script_classes=[ {
+"base": "Reference",
+"class": "Person",
+"language": "GDScript",
+"path": "res://src/game/person.gd"
+}, {
+"base": "Reference",
+"class": "PersonManager",
+"language": "GDScript",
+"path": "res://src/game/person_manager.gd"
+}, {
+"base": "Reference",
+"class": "ResourceManager",
+"language": "GDScript",
+"path": "res://src/game/resource_manager.gd"
+} ]
+_global_script_class_icons={
+"Person": "",
+"PersonManager": "",
+"ResourceManager": ""
+}
+
 [application]
 
 config/name="GMTK_2021_Joined_Together"
