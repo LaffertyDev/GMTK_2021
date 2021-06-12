@@ -18,9 +18,9 @@ signal decrement_job(job_type)
 signal increment_job(job_type)
 
 func _ready() -> void:
+	add_to_group("jobs")
 	$job_label.set_text(Job_Title)
 	$job_occupancy_max.set_text(str(Max_Occupancy))
-	pass
 
 func _on_minus_pressed() -> void:
 	if (current_occupancy > 0):
