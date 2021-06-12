@@ -1,12 +1,16 @@
+const Enums = preload("res://src/game/enums.gd")
+
 class PersonManager:
 	var persons = []
 
 	func _init():
-		persons.append(Person.Build(1, "Human 1"))
-		persons.append(Person.Build(2, "Human 2"))
-		persons.append(Person.Build(3, "Human 3"))
-		persons.append(Person.Build(4, "Human 4"))
-		persons.append(Person.Build(5, "Human 5"))
+		persons.append(Person.Build(1, "Human 1", Enums.Race.Human))
+		persons.append(Person.Build(2, "Human 2", Enums.Race.Human))
+		persons.append(Person.Build(3, "Human 3", Enums.Race.Human))
+		persons.append(Person.Build(4, "Human 4", Enums.Race.Human))
+		persons.append(Person.Build(5, "Human 5", Enums.Race.Human))
+		persons.append(Person.Build(6, "Alien 1", Enums.Race.Alien))
+		persons.append(Person.Build(7, "Robot 1", Enums.Race.Robot))
 
 	func get_person_by_id(id: int) -> Person:
 		for person in persons:
@@ -39,10 +43,12 @@ class Person:
 	var id: int
 	var name: String
 	var assignment: int
+	var race: int
 
-	static func Build(_id: int, _name: String) -> Person:
+	static func Build(_id: int, _name: String, _race: int) -> Person:
 		var person = Person.new()
 		person.id = _id
 		person.name = _name
 		person.assignment = -1
+		person.race = _race
 		return person

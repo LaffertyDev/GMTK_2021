@@ -377,4 +377,13 @@ margin_bottom = 230.0
 Job_Title = "Reclaim Water"
 Job_Type = 5
 
+[node name="generate_mguffin" parent="Game_GUI/jobs" instance=ExtResource( 3 )]
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_top = 240.0
+margin_right = 246.0
+margin_bottom = 270.0
+Job_Title = "Mguffin"
+Job_Type = 6
+
 [connection signal="pressed" from="Game_GUI/next_cycle_button" to="." method="_on_next_cycle_button_pressed"]

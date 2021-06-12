@@ -6,7 +6,8 @@ enum JobTypes {
 	generate_power = 2,
 	generate_food = 3,
 	reduce_stress = 4,
-	reclaim_water = 5
+	reclaim_water = 5,
+	mguffin = 6
 }
 
 export(String) var Job_Title = "{{ Job Label }}"
