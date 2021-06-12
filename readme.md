@@ -1,3 +1,7 @@
-# Godot Template
+# GMTK-2021 "Joined Together"
 
-This is my godot template. Its a lot of boilerplate that I like to implement anyway.
+
+
+## Credits
+
+Jordan, for initial brainstorming and mockups

@@ -10,7 +10,7 @@ config_version=4
 
 [application]
 
-config/name="Template Project - Change Me!"
+config/name="GMTK_2021_Joined_Together"
 run/main_scene="res://src/menu_main/menu_main.tscn"
 config/icon="res://icon.png"
 
@@ -21,7 +21,7 @@ Globals="*res://src/globals.gd"
 
 [display]
 
-window/size/width=800
+window/size/height=768
 
 [physics]
 
