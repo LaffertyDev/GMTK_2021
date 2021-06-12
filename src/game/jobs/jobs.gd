@@ -21,7 +21,7 @@ func _on_assign_pressed() -> void:
 	var personManager = get_tree().get_nodes_in_group("game_root")[0].person_manager
 	var unassignedPersons = personManager.get_unassigned_persons()
 	for person in unassignedPersons:
-		job_assignment_popup.add_item(person.name, person.id)
+		job_assignment_popup.add_item("%s %d %s" % [person.name, 10, JobTypes.JobTypes.keys()[Job_Type + 1]], person.id)
 
 	add_child(job_assignment_popup)
 	job_assignment_popup.popup_centered()
@@ -46,7 +46,7 @@ func _on_unassign_pressed() -> void:
 	var personManager = get_tree().get_nodes_in_group("game_root")[0].person_manager
 	var personsAssignedTo = personManager.get_persons_assigned_to(Job_Type)
 	for person in personsAssignedTo:
-		job_unassignment_popup.add_item(person.name, person.id)
+		job_unassignment_popup.add_item("%s %d %s" % [person.name, -10, JobTypes.JobTypes.keys()[Job_Type]], person.id)
 
 	add_child(job_unassignment_popup)
 	job_unassignment_popup.popup_centered()
