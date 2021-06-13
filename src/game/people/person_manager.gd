@@ -112,10 +112,10 @@ func _init():
 		, Enums.TraitTypes.NEED
 		, Enums.ShipResources.POWER, -1))
 	trait5.append(traitBuilder.build_trait(
-		"Mguffin"
-		, "Mguffin"
+		"Song of my People"
+		, "The alure of the Beatle"
 		, Enums.TraitTypes.NEED
-		, Enums.ShipResources.MGUFFIN, -1))
+		, Enums.ShipResources.BEATLES, -1))
 	trait5.append(traitBuilder.build_trait(
 		"Time Bomb"
 		, "The Alien's appear to siphoning some power..."
@@ -126,19 +126,19 @@ func _init():
 	var trait6 = []
 	trait6.append(traitBuilder.build_trait(
 		"The Huntress"
-		, "Shooting Comet moves erratically; hunting for the exotic"
+		, "Shooting Comet moves erratically; hunting for the exotic beatles"
 		, Enums.TraitTypes.GENERATIVE_EFFECT
-		, Enums.ShipResources.MGUFFIN, 2))
+		, Enums.ShipResources.BEATLES, 2))
 	trait6.append(traitBuilder.build_trait(
 		"Power Hungry"
 		, "The Alien's appear to siphoning some power..."
 		, Enums.TraitTypes.NEED
 		, Enums.ShipResources.POWER, -1))
 	trait6.append(traitBuilder.build_trait(
-		"Mguffin"
-		, "Mguffin"
+		"Song of my People"
+		, "The alure of the Beatle"
 		, Enums.TraitTypes.NEED
-		, Enums.ShipResources.MGUFFIN, -1))
+		, Enums.ShipResources.BEATLES, -1))
 	trait6.append(traitBuilder.build_trait(
 		"Time Bomb"
 		, "The Alien's appear to siphoning some power..."
@@ -159,10 +159,10 @@ func _init():
 		, Enums.ShipResources.POWER
 		, -15))
 	trait7.append(traitBuilder.build_trait(
-		"Mguffin"
-		, "Mguffin"
+		"Song of my People"
+		, "The alure of the Beatle"
 		, Enums.TraitTypes.NEED
-		, Enums.ShipResources.MGUFFIN, -1))
+		, Enums.ShipResources.BEATLES, -1))
 	trait7.append(traitBuilder.build_trait(
 		"Time Bomb"
 		, "The Alien's appear to siphoning some power..."

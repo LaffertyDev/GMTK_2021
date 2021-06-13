@@ -9,7 +9,7 @@ enum ShipResources {
 	FOOD, # human unique
 	POWER, # alien shared with ship
 	STRESS, # human shared with alien
-	MGUFFIN # alien unique
+	BEATLES # alien unique
 }
 
 enum TraitTypes {

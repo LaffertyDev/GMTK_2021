@@ -267,22 +267,22 @@ margin_right = 93.0
 margin_bottom = 25.0
 text = "Power"
 
-[node name="mguffin" type="HBoxContainer" parent="Game_GUI/resources/alien_resources"]
+[node name="beatles" type="HBoxContainer" parent="Game_GUI/resources/alien_resources"]
 margin_top = 116.0
 margin_right = 152.0
 margin_bottom = 148.0
 
-[node name="TextureRect" type="TextureRect" parent="Game_GUI/resources/alien_resources/mguffin"]
+[node name="TextureRect" type="TextureRect" parent="Game_GUI/resources/alien_resources/beatles"]
 margin_right = 32.0
 margin_bottom = 32.0
 texture = ExtResource( 13 )
 
-[node name="alien_resource_label" type="Label" parent="Game_GUI/resources/alien_resources/mguffin"]
+[node name="alien_beatles_label" type="Label" parent="Game_GUI/resources/alien_resources/beatles"]
 margin_left = 36.0
 margin_top = 7.0
-margin_right = 109.0
+margin_right = 111.0
 margin_bottom = 25.0
-text = "Mguffin"
+text = "Beatles"
 
 [node name="stress" type="HBoxContainer" parent="Game_GUI/resources/alien_resources"]
 margin_top = 152.0
@@ -366,12 +366,12 @@ Job_Type = 4
 Max_Occupancy = 2
 Job_Texture = ExtResource( 6 )
 
-[node name="generate_mguffin" parent="Game_GUI/jobs" instance=ExtResource( 3 )]
+[node name="hunt_beatles" parent="Game_GUI/jobs" instance=ExtResource( 3 )]
 margin_left = 142.0
 margin_top = 90.0
 margin_right = 280.0
 margin_bottom = 120.0
-Job_Title = "Mguffin"
+Job_Title = "Hunt Beatles"
 Job_Type = 5
 Max_Occupancy = 2
 Job_Texture = ExtResource( 8 )

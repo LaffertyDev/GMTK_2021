@@ -18,8 +18,8 @@ static func get_resources_affected_by_job(jobType: int) -> Array:
 			return [Enums.ShipResources.STRESS]
 		(JobTypes.JobTypes.reclaim_water):
 			return [Enums.ShipResources.WATER]
-		(JobTypes.JobTypes.mguffin):
-			return [Enums.ShipResources.MGUFFIN]
+		(JobTypes.JobTypes.find_beatles):
+			return [Enums.ShipResources.BEATLES]
 		_:
 			return []
 
@@ -52,8 +52,8 @@ static func get_resource_format_short_name(resource: int) -> String:
 			return "%d Power"
 		(Enums.ShipResources.STRESS):
 			return "%d Stress"
-		(Enums.ShipResources.MGUFFIN):
-			return "%d Mguffin"
+		(Enums.ShipResources.BEATLES):
+			return "%d Beatles"
 	return "%d"
 
 static func get_resource_format_long_name(resource: int) -> String:
@@ -66,6 +66,6 @@ static func get_resource_format_long_name(resource: int) -> String:
 			return "Generates %d Power per Cycle"
 		(Enums.ShipResources.STRESS):
 			return "Relieves %d Stress per Cycle"
-		(Enums.ShipResources.MGUFFIN):
-			return "Generates %d Mguffin per Cycle"
+		(Enums.ShipResources.BEATLES):
+			return "Generates %d Beatles per Cycle"
 	return "%d"

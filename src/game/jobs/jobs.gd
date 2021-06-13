@@ -56,7 +56,7 @@ func adjust_resources(resourceManager: ResourceManager) -> void:
 				pass
 			(JobTypes.JobTypes.reclaim_water):
 				pass
-			(JobTypes.JobTypes.mguffin):
+			(JobTypes.JobTypes.find_beatles):
 				pass
 
 	for person in assigned_persons:
@@ -75,8 +75,8 @@ func adjust_resources(resourceManager: ResourceManager) -> void:
 						resourceManager.alien_stress_delta += individual_effect
 				(Enums.ShipResources.WATER):
 					resourceManager.human_water_delta += individual_effect
-				(Enums.ShipResources.MGUFFIN):
-					resourceManager.alien_mguffin_delta += individual_effect
+				(Enums.ShipResources.BEATLES):
+					resourceManager.alien_beatles_delta += individual_effect
 				_:
 					print("UNKNOWN RESOURCE")
 

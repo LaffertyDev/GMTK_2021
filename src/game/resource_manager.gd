@@ -7,7 +7,7 @@ var ship_hull = 100
 
 var alien_power_delta = -3
 var alien_stress_delta = -3
-var alien_mguffin_delta = -3
+var alien_beatles_delta = -3
 var alien_eggs = 100
 
 var human_water_delta = -3
@@ -23,7 +23,7 @@ func recompute_deltas(jobs: Array, people: Array) -> void:
 
 	self.alien_power_delta = 0
 	self.alien_stress_delta = 0
-	self.alien_mguffin_delta = 0
+	self.alien_beatles_delta = 0
 	self.human_water_delta = 0
 	self.human_stress_delta = 0
 	self.human_food_delta = 0
@@ -42,8 +42,8 @@ func recompute_deltas(jobs: Array, people: Array) -> void:
 						self.human_stress_delta += need.generative_effect
 					else:
 						self.alien_stress_delta += need.generative_effect
-				(Enums.ShipResources.MGUFFIN):
-					self.alien_mguffin_delta += need.generative_effect
+				(Enums.ShipResources.BEATLES):
+					self.alien_beatles_delta += need.generative_effect
 
 	for job in jobs:
 		job.adjust_resources(self)

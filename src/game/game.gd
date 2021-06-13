@@ -45,7 +45,7 @@ func sync_resources(resourceManager: ResourceManager) -> void:
 	var delta_ship = min(resourceManager.alien_power_delta, 0) + min(resourceManager.human_water_delta, 0)
 	resourceManager.ship_hull = max(resourceManager.ship_hull + delta_ship, 0)
 
-	var delta_alien = min(resourceManager.alien_power_delta, 0) + min(resourceManager.alien_stress_delta, 0) + min(resourceManager.alien_mguffin_delta, 0)
+	var delta_alien = min(resourceManager.alien_power_delta, 0) + min(resourceManager.alien_stress_delta, 0) + min(resourceManager.alien_beatles_delta, 0)
 	resourceManager.alien_eggs = max(resourceManager.alien_eggs + delta_alien, 0)
 
 	var delta_human = min(resourceManager.human_food_delta, 0) + min(resourceManager.human_water_delta, 0) + min(resourceManager.human_stress_delta, 0)
@@ -64,7 +64,7 @@ func sync_ui(resourceManager: ResourceManager) -> void:
 	$Game_GUI/resources/alien_resources/alien_eggs.value = resourceManager.alien_eggs
 	$Game_GUI/resources/alien_resources/power/alien_power_label.set_text("Power: %d" % [resourceManager.alien_power_delta])
 	$Game_GUI/resources/alien_resources/stress/alien_stress_label.set_text("Stress: %d" % [resourceManager.alien_stress_delta])
-	$Game_GUI/resources/alien_resources/mguffin/alien_resource_label.set_text("???: %d" % [resourceManager.alien_mguffin_delta])
+	$Game_GUI/resources/alien_resources/beatles/alien_beatles_label.set_text("Beatles: %d" % [resourceManager.alien_beatles_delta])
 
 	$Game_GUI/resources/human_resources/human_pods.value = resourceManager.human_lifepods
 	$Game_GUI/resources/human_resources/food/human_food_label.set_text("Food: %d" % [resourceManager.human_food_delta])
