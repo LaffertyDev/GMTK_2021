@@ -1,4 +1,4 @@
-# GMTK-2021 "Joined Together"
+# Chart the Stars - GMTK 2021 Game Jam Submission
 
 This is my submission for the 2021 GMTK Game Jam, themed "Joined Together".
 
