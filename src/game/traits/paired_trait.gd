@@ -5,6 +5,7 @@ const Person = preload("res://src/game/people/person.gd")
 var id: int
 var title: String
 var description: String
+var effect_description: String
 var player_affected_1_id: int
 var player_affected_2_id: int
 

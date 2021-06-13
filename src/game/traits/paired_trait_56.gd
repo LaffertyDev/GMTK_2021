@@ -3,6 +3,7 @@ extends PairedTrait
 func _init():
     self.title = "Irritant"
     self.description = "Glog'na never appreciated the Shooting Comet. And Shooting Comet never gave Glog'na the time of day. Whenever these two work together, lose 1 Beatle, lose 2 alien stress"
+    self.effect_description = "Lose 1 Beatle, Aliens take 2 Stress" 
     self.player_affected_1_id = 5
     self.player_affected_2_id = 6
 

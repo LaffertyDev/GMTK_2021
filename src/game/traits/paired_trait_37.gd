@@ -2,7 +2,8 @@ extends PairedTrait
 
 func _init():
     self.title = "I can fix that"
-    self.description = "Chief Engineer Emily looks over Bob's electric slime readings. After applying a thin Geomagnasic Coating Bob's power siphoning decreased significantly. Whenever Chief Engineer Emily and Bob work together, generate 13 power."
+    self.description = "Chief Engineer Emily looks over Bob's electrical slime readings. After applying a thin Geomagnasic Coating, Bob's Power siphoning decreased significantly."
+    self.effect_description = "Generate 13 Power." 
     self.player_affected_1_id = 3
     self.player_affected_2_id = 7
 

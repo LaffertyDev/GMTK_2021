@@ -9,6 +9,7 @@ func _ready():
 	add_to_group("cyclables")
 	$Control/MarginContainer/VBoxContainer/title.set_text("Title")
 	$Control/MarginContainer/VBoxContainer/description.set_text("Nothing to see here...")
+	$Control/MarginContainer/VBoxContainer/effect.set_text("I do nothing")
 
 func set_paired_trait(pairedTraitToSet: PairedTrait):
 	paired_trait = pairedTraitToSet
@@ -19,6 +20,7 @@ func set_paired_trait(pairedTraitToSet: PairedTrait):
 	show()
 	$Control/MarginContainer/VBoxContainer/title.set_text(paired_trait.title)
 	$Control/MarginContainer/VBoxContainer/description.set_text(paired_trait.description)
+	$Control/MarginContainer/VBoxContainer/effect.set_text(paired_trait.effect_description)
 
 func _on_cycle():
 	if (paired_trait != null):

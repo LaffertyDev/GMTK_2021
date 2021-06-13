@@ -2,7 +2,8 @@ extends PairedTrait
 
 func _init():
     self.title = "What are you?!"
-    self.description = "Glog'na acosts of the Captain that he really should shower more often. The Captain, realizing this chance for Diplomacy, agrees. Whenever the Captain and Glog'na work together, lose 3 water and each species loses 1 stress."
+    self.description = "Glog'na tells the Captain that he really should shower more often. The Captain, realizing this chance for Diplomacy, agrees. Nothing beats a hot shower."
+    self.effect_description = "Humans and Aliens reduce Stress by 1, lose 3 Water."
     self.player_affected_1_id = 1
     self.player_affected_2_id = 5
 

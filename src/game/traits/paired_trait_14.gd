@@ -2,7 +2,8 @@ extends PairedTrait
 
 func _init():
     self.title = "Medical Override"
-    self.description = "Medical Officer Kurry has been perpetually concerned about the Captain's Health ever since the Vega incident. Whenever they work together, they generate 1 stress"
+    self.description = "Medical Officer Kurry has been concerned about the Captain's Health ever since the Vega incident."
+    self.effect_description = "Humans take 1 Stress."
     self.player_affected_1_id = 1
     self.player_affected_2_id = 4
 

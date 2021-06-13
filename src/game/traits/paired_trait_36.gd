@@ -3,6 +3,7 @@ extends PairedTrait
 func _init():
     self.title = "Good Boy!"
     self.description = "Love at first sight. So adorable! Shooting Comet immediately took to the Chief Engineer; showering her with hunted findings. When together, Aliens and Humans lose 2 stress and gain 2 food."
+    self.effect_description = "Humans and Aliens relieve 2 Stress, gain 2 Food" 
     self.player_affected_1_id = 3
     self.player_affected_2_id = 6
 

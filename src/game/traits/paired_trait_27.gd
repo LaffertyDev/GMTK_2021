@@ -2,7 +2,8 @@ extends PairedTrait
 
 func _init():
     self.title = "Fresh Fruit?!"
-    self.description = "Walking down the hallway, Bob and the XO Harris are chatting pleasantries. Bob absentmindedly picks at one of his Strawberries, and the XO gets a wonderful idea with a 2163 aged Cognac. Gain +5 water, +5 food"
+    self.description = "Bob and XO Harris are walking down the corridor chatting pleasantries. Bob absentmindedly picks at one of his Strawberries, and the XO gets a wonderful idea involving a 200-year aged Cognac."
+    self.effect_description = "Gain 5 Water, gain 5 Food." 
     self.player_affected_1_id = 2
     self.player_affected_2_id = 7
 
