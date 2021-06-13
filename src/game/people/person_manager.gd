@@ -34,7 +34,7 @@ func _init():
 	var trait2 = []
 	trait2.append(traitBuilder.build_trait(
 		"A fine collection"
-		, "The XO has been known to find a good drink"
+		, "The XO has been knows where the best drink is"
 		, Enums.TraitTypes.GENERATIVE_EFFECT
 		, Enums.ShipResources.WATER, 2))
 	trait2.append(traitBuilder.build_trait(
@@ -125,10 +125,15 @@ func _init():
 
 	var trait6 = []
 	trait6.append(traitBuilder.build_trait(
-		"The Huntress"
+		"Hunter's Ears"
 		, "Shooting Comet moves erratically; hunting for the exotic beatles"
 		, Enums.TraitTypes.GENERATIVE_EFFECT
-		, Enums.ShipResources.BEATLES, 2))
+		, Enums.ShipResources.BEATLES, 3))
+	trait6.append(traitBuilder.build_trait(
+		"Inconsiderate"
+		, "While on the hunt, the Shooting Comet has been known to consume leftovers on the ground"
+		, Enums.TraitTypes.NEED
+		, Enums.ShipResources.FOOD, -1))
 	trait6.append(traitBuilder.build_trait(
 		"Power Hungry"
 		, "The Alien's appear to siphoning some power..."

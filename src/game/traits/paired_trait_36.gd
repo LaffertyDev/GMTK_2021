@@ -1,13 +1,15 @@
 extends PairedTrait
 
 func _init():
-    self.title = "Pair 36 T"
-    self.description = "Paire 36 D"
+    self.title = "Good Boy!"
+    self.description = "Love at first sight. So adorable! Shooting Comet immediately took to the Chief Engineer; showering her with hunted findings. When together, Aliens and Humans lose 2 stress and gain 2 food."
     self.player_affected_1_id = 3
     self.player_affected_2_id = 6
 
 func apply_pair_effect(resourceManager: ResourceManager) -> void:
-    resourceManager.human_water_delta += 100
+    resourceManager.human_stress_delta += 2
+    resourceManager.alien_stress_delta += 2
+    resourceManager.human_food_delta += 2
 
 func apply_pair_effect_on_cycle() -> void:
     pass

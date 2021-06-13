@@ -1,13 +1,13 @@
 extends PairedTrait
 
 func _init():
-    self.title = "Pair 23 T"
-    self.description = "Paire 23 D"
+    self.title = "Fond of Drink"
+    self.description = "Normally found together in the Mess, the Chief Engineer and the XO have been known to share their favorite drinks. No private barrel-aged Whiskey is off the table for these comrades. When they work together, gain 10 Water"
     self.player_affected_1_id = 2
     self.player_affected_2_id = 3
 
 func apply_pair_effect(resourceManager: ResourceManager) -> void:
-    resourceManager.human_water_delta += 100
+    resourceManager.human_water_delta += 10
 
 func apply_pair_effect_on_cycle() -> void:
     pass

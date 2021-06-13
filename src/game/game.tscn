@@ -324,53 +324,53 @@ __meta__ = {
 }
 
 [node name="chart_stars_job" parent="Game_GUI/jobs" instance=ExtResource( 3 )]
-margin_right = 138.0
-margin_bottom = 30.0
+margin_right = 400.0
+margin_bottom = 335.0
 Job_Title = "Chart the Stars"
 Job_Texture = ExtResource( 4 )
 
 [node name="generate_power" parent="Game_GUI/jobs" instance=ExtResource( 3 )]
-margin_left = 142.0
-margin_right = 280.0
-margin_bottom = 30.0
+margin_left = 404.0
+margin_right = 804.0
+margin_bottom = 335.0
 Job_Title = "Generate Power"
 Job_Type = 1
 Max_Occupancy = 2
 Job_Texture = ExtResource( 5 )
 
 [node name="generate_food" parent="Game_GUI/jobs" instance=ExtResource( 3 )]
-margin_top = 45.0
-margin_right = 138.0
-margin_bottom = 75.0
+margin_top = 350.0
+margin_right = 400.0
+margin_bottom = 685.0
 Job_Title = "Generate Food"
 Job_Type = 2
 Max_Occupancy = 2
 Job_Texture = ExtResource( 1 )
 
 [node name="reduce_stress" parent="Game_GUI/jobs" instance=ExtResource( 3 )]
-margin_left = 142.0
-margin_top = 45.0
-margin_right = 280.0
-margin_bottom = 75.0
+margin_left = 404.0
+margin_top = 350.0
+margin_right = 804.0
+margin_bottom = 685.0
 Job_Title = "Reduce Stress"
 Job_Type = 3
 Max_Occupancy = 2
 Job_Texture = ExtResource( 7 )
 
 [node name="reclaim_water" parent="Game_GUI/jobs" instance=ExtResource( 3 )]
-margin_top = 90.0
-margin_right = 138.0
-margin_bottom = 120.0
+margin_top = 700.0
+margin_right = 400.0
+margin_bottom = 1035.0
 Job_Title = "Reclaim Water"
 Job_Type = 4
 Max_Occupancy = 2
 Job_Texture = ExtResource( 6 )
 
 [node name="hunt_beatles" parent="Game_GUI/jobs" instance=ExtResource( 3 )]
-margin_left = 142.0
-margin_top = 90.0
-margin_right = 280.0
-margin_bottom = 120.0
+margin_left = 404.0
+margin_top = 700.0
+margin_right = 804.0
+margin_bottom = 1035.0
 Job_Title = "Hunt Beatles"
 Job_Type = 5
 Max_Occupancy = 2

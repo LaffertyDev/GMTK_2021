@@ -1,13 +1,13 @@
 extends PairedTrait
 
 func _init():
-    self.title = "Pair 35 T"
-    self.description = "Paire 35 D"
+    self.title = "Sparky"
+    self.description = "The Chief and Glog'na had initially gotten off on the wrong foot. But the Power Readings from Glog'na are hard to argue with. Whenever Chief Engineer Emily and Glog'na are paired together, generate +15 power"
     self.player_affected_1_id = 3
     self.player_affected_2_id = 5
 
 func apply_pair_effect(resourceManager: ResourceManager) -> void:
-    resourceManager.human_water_delta += 100
+    resourceManager.alien_power_delta += 15
 
 func apply_pair_effect_on_cycle() -> void:
     pass

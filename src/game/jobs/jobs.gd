@@ -25,13 +25,11 @@ func _ready() -> void:
 	$HBoxContainer/job_label.set_text(Job_Title)
 
 func _on_assignment_changed():
-	var resourceManager = get_tree().get_nodes_in_group("game_root")[0].resource_manager
 	var personManager = get_tree().get_nodes_in_group("game_root")[0].person_manager
 	var assigned_persons = personManager.get_persons_assigned_to(Job_Type)
 	var pairedTraitManager = get_tree().get_nodes_in_group("game_root")[0].paired_trait_manager
 	if (assigned_persons.size() == 2):
 		var pairedTrait = pairedTraitManager.get_pair_effect(assigned_persons[0], assigned_persons[1])
-		pairedTrait.apply_pair_effect(resourceManager)
 		$paired_trait_display.set_paired_trait(pairedTrait)
 		$paired_trait_display.popup_centered()
 		$HBoxContainer/view_pair_effect_button.show()
@@ -49,7 +47,7 @@ func adjust_resources(resourceManager: ResourceManager) -> void:
 			(JobTypes.JobTypes.chart_stars):
 				resourceManager.alien_power_delta -= 15
 			(JobTypes.JobTypes.generate_power):
-				resourceManager.human_water_delta -= 1
+				pass
 			(JobTypes.JobTypes.generate_food):
 				pass
 			(JobTypes.JobTypes.reduce_stress):
@@ -57,7 +55,10 @@ func adjust_resources(resourceManager: ResourceManager) -> void:
 			(JobTypes.JobTypes.reclaim_water):
 				pass
 			(JobTypes.JobTypes.find_beatles):
-				pass
+				pass		
+	
+	if ($paired_trait_display.paired_trait != null):
+		$paired_trait_display.paired_trait.apply_pair_effect(resourceManager)
 
 	for person in assigned_persons:
 		for affected_resource in affected_resources:
