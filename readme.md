@@ -4,6 +4,16 @@ This is my submission for the 2021 GMTK Game Jam, themed "Joined Together".
 
 You can play this game on [itch](https://lafferty.itch.io/chart-the-stars) from your browser. You can also view the [GMTK 2021 Page](https://itch.io/jam/gmtk-2021/rate/1084587).
 
+## Screenshots
+
+![Main Interface](screenshots/main_interface.png "Main Interface")
+
+![Assignment Menu](screenshots/assignment_menu.png "Assignment Menu")
+
+![Crew Viewer](screenshots/crew_viewer.png "Crew Viewer")
+
+![Joined Event](screenshots/joined_event.png "Joined Event")
+
 ## Timeline
 
 The Game Jam ran from 2021-06-11 at 1:00PM CDT to 2021-06-13 at 1:20PM CDT (allowing for late submissions due to heavy jamming at the end).
@@ -67,6 +77,7 @@ I took very detailed notes on how my time was spent the weekend of the Jam. I th
 * Export and test your game often. Keep those exports as lock-steps in case something cataclysmic happens
 * For every hour spent on initial development, plan for an hour spent iterating
 * Plan for one hour of creating writing for the submission. Try to do this away from the Deadline so you're not crunched for iteration time.
+* Consider how the Game Mechanics will be learned. Tutorials? Text? Self-evident? Limited time makes this very difficult.
 
 (Budgeting, out of 48 hours, 16 hours spent sleeping, 3 spent eating, 2 spent breaking, for 27 hours of total project time)
 I propose a breakdown of time for future Jams:
