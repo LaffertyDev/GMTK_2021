@@ -78,6 +78,8 @@ I took very detailed notes on how my time was spent the weekend of the Jam. I th
 * For every hour spent on initial development, plan for an hour spent iterating
 * Plan for one hour of creating writing for the submission. Try to do this away from the Deadline so you're not crunched for iteration time.
 * Consider how the Game Mechanics will be learned. Tutorials? Text? Self-evident? Limited time makes this very difficult.
+* HTML Builds are Essential to discoverability
+* Gifs showing Gameplay are Esssential to discoverability
 
 (Budgeting, out of 48 hours, 16 hours spent sleeping, 3 spent eating, 2 spent breaking, for 27 hours of total project time)
 I propose a breakdown of time for future Jams:
