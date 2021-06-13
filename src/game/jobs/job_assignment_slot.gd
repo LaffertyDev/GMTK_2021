@@ -10,7 +10,8 @@ var assigned_person: Person
 var job_type: int
 
 func _ready():
-	$HBoxContainer/button_unassign.hide()
+	add_to_group("post_cycleables")
+	$HBoxContainer/button_assign.show()
 	$HBoxContainer/slot_icon.hide()
 	$HBoxContainer/slot_name.hide()
 
@@ -37,7 +38,6 @@ func _on_assignment_selected(id: int) -> void:
 	personManager.assign_person(person, job_type)
 	assigned_person = person
 	$HBoxContainer/button_assign.hide()
-	$HBoxContainer/button_unassign.show()
 	$HBoxContainer/slot_name.show()
 	$HBoxContainer/slot_icon.show()
 	$HBoxContainer/slot_icon.texture = assigned_person.texture
@@ -46,12 +46,13 @@ func _on_assignment_selected(id: int) -> void:
 	$HBoxContainer/slot_effects.set_text(TraitManager.get_traits_description(person, TraitManager.get_resources_affected_by_job(job_type)))
 	emit_signal("job_assignment_changed")
 		
-func _on_button_unassign_pressed():
-	var personManager = get_tree().get_nodes_in_group("game_root")[0].person_manager
-	personManager.unassign_person(assigned_person)
-	$HBoxContainer/button_assign.show()
-	$HBoxContainer/button_unassign.hide()
-	$HBoxContainer/slot_name.hide()
-	$HBoxContainer/slot_icon.hide()
-	$HBoxContainer/slot_effects.hide()
-	emit_signal("job_assignment_changed")
+func _on_post_cycle():
+	if assigned_person != null:
+		var personManager = get_tree().get_nodes_in_group("game_root")[0].person_manager
+		personManager.unassign_person(assigned_person)
+		assigned_person = null
+		$HBoxContainer/button_assign.show()
+		$HBoxContainer/slot_name.hide()
+		$HBoxContainer/slot_icon.hide()
+		$HBoxContainer/slot_effects.hide()
+		emit_signal("job_assignment_changed")

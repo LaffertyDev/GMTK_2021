@@ -30,6 +30,7 @@ func _on_next_cycle_button_pressed() -> void:
 	sync_resources(resource_manager)
 	sync_ui(resource_manager)
 	handle_game_done(resource_manager)
+	handle_post_cycle()
 
 func _on_job_assignment_changed() -> void:
 	var jobs = get_tree().get_nodes_in_group("jobs")
@@ -79,3 +80,6 @@ func handle_game_done(resourceManager: ResourceManager) -> void:
 		var err = get_tree().change_scene("res://src/game/menu_defeat.tscn")
 		if err != OK:
 			print("There was a failure changing the scene")
+
+func handle_post_cycle() -> void:
+	get_tree().call_group_flags(2, "post_cycleables", "_on_post_cycle") # 2 is a magic enum for REAL TIME
