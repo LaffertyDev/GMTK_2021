@@ -11,12 +11,11 @@ func _init():
 	persons.append(Build(2, "Human 2", Enums.Race.Human, [], load("res://src/game/people/people_human_2.png")))
 	persons.append(Build(3, "Human 3", Enums.Race.Human, [], load("res://src/game/people/people_human_3.png")))
 	persons.append(Build(4, "Human 4", Enums.Race.Human, [], load("res://src/game/people/people_human_4.png")))
-	persons.append(Build(5, "Human 5", Enums.Race.Human, [], load("res://src/game/people/people_human_5.png")))
-	persons.append(Build(6, "Alien 1", Enums.Race.Alien, [], load("res://src/game/people/people_alien_1.png")))
-	persons.append(Build(7, "Alien 2", Enums.Race.Alien, [], load("res://src/game/people/people_alien_2.png")))
-	persons.append(Build(8, "Alien 3", Enums.Race.Alien, [], load("res://src/game/people/people_alien_3.png")))
-	persons.append(Build(9, "Robot 1", Enums.Race.Robot, [], load("res://src/game/people/people_robot_1.png")))
-	persons.append(Build(10, "Robot 2", Enums.Race.Robot, [], load("res://src/game/people/people_robot_1.png")))
+	persons.append(Build(5, "Alien 1", Enums.Race.Alien, [], load("res://src/game/people/people_alien_1.png")))
+	persons.append(Build(6, "Alien 2", Enums.Race.Alien, [], load("res://src/game/people/people_alien_2.png")))
+	persons.append(Build(7, "Alien 3", Enums.Race.Alien, [], load("res://src/game/people/people_alien_3.png")))
+	persons.append(Build(8, "Robot 1", Enums.Race.Robot, [], load("res://src/game/people/people_robot_1.png")))
+	persons.append(Build(9, "Robot 2", Enums.Race.Robot, [], load("res://src/game/people/people_robot_1.png")))
 
 func get_person_by_id(id: int) -> Person:
 	for person in persons:
