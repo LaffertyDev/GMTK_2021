@@ -18,15 +18,6 @@ func _ready() -> void:
 	resource_manager.recompute_deltas([], person_manager.persons)
 	sync_ui(resource_manager)
 
-func _input(event) -> void:
-	if event.is_action_pressed("ui_cancel"):
-		# load menu and pause game
-		if !has_node("../menu_game"):
-			var menu_game_res = load("res://src/menu_game/menu_game.tscn")
-			var menu_game_ins = menu_game_res.instance()
-			menu_game_ins.name = "menu_game"
-			get_parent().add_child(menu_game_ins)
-
 func _on_next_cycle_button_pressed() -> void:
 	sync_resources(resource_manager)
 	sync_ui(resource_manager)

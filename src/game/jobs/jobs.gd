@@ -87,10 +87,8 @@ func _on_cycle():
 		var resourceManager = get_tree().get_nodes_in_group("game_root")[0].resource_manager
 		var personManager = get_tree().get_nodes_in_group("game_root")[0].person_manager
 		var assigned_persons = personManager.get_persons_assigned_to(Job_Type)
-		print(assigned_persons.size())
 		if (assigned_persons.size() > 0):
 			resourceManager.stars_charted = min(resourceManager.stars_charted + 1, resourceManager.stars_charted_cap)
-			print(resourceManager.stars_charted)
 
 func _on_view_pair_effect_button_pressed():
 	$paired_trait_display.popup_centered()
