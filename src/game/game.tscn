@@ -420,6 +420,16 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 
+[node name="view_people_button" type="Button" parent="Game_GUI"]
+margin_left = 14.1121
+margin_top = 564.483
+margin_right = 116.112
+margin_bottom = 588.483
+text = "View Crew"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
 [node name="star_background" type="Sprite" parent="."]
 position = Vector2( 382.875, 323.84 )
 z_index = -5
@@ -430,3 +440,4 @@ __meta__ = {
 }
 
 [connection signal="pressed" from="Game_GUI/next_cycle_button" to="." method="_on_next_cycle_button_pressed"]
+[connection signal="pressed" from="Game_GUI/view_people_button" to="." method="_on_view_people_button_pressed"]

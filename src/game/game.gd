@@ -83,3 +83,10 @@ func handle_game_done(resourceManager: ResourceManager) -> void:
 
 func handle_post_cycle() -> void:
 	get_tree().call_group_flags(2, "post_cycleables", "_on_post_cycle") # 2 is a magic enum for REAL TIME
+
+func _on_view_people_button_pressed():
+	var people_menu_res = load("res://src/game/people/people_display.tscn")
+	var people_menu = people_menu_res.instance()
+	people_menu.connect('modal_closed', people_menu, 'queue_free')
+	add_child(people_menu)
+	people_menu.popup_centered()

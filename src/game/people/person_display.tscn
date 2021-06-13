@@ -1,0 +1,40 @@
+[gd_scene load_steps=2 format=2]
+
+[ext_resource path="res://src/game/people/person_display.gd" type="Script" id=1]
+
+[node name="Control" type="Control"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_right = -800.0
+margin_bottom = -600.0
+rect_min_size = Vector2( 200, 150 )
+script = ExtResource( 1 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="person_icon" type="TextureRect" parent="."]
+margin_right = 32.0
+margin_bottom = 32.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="person_title" type="Label" parent="."]
+margin_left = 38.9738
+margin_top = 9.79446
+margin_right = 168.974
+margin_bottom = 23.7945
+text = "{{ Character Name }}"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="traits_list" type="ItemList" parent="."]
+margin_top = 34.7959
+margin_right = 200.0
+margin_bottom = 134.796
+rect_min_size = Vector2( 200, 100 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
