@@ -23,7 +23,6 @@ func _on_button_assign_pressed():
 		if job_type == JobTypes.JobTypes.chart_stars:
 			job_assignment_popup.add_item(person.name, person.id)
 		else:
-			var resources_affected = TraitManager.get_resources_affected_by_job(job_type)
 			job_assignment_string += " " + TraitManager.get_traits_description(person, TraitManager.get_resources_affected_by_job(job_type))
 			job_assignment_popup.add_item(job_assignment_string, person.id)
 
