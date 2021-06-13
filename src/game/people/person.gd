@@ -7,6 +7,7 @@ var name: String
 var assignment: int
 var race: int # Race enum
 var traits: Array # array of traits that apply to this Person
+var texture: Texture
 
 func get_individual_resource_effect(resource: int) -> int:
 	var amount_to_adjust = 10

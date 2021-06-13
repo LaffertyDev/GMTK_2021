@@ -53,21 +53,21 @@ func sync_resources(resourceManager: ResourceManager) -> void:
 
 func sync_ui(resourceManager: ResourceManager) -> void:
 	$Game_GUI/cycle_info.set_text("Cycle: %d" % [current_cycle])
-	$Game_GUI/stars_charted.set_text("Stars Charted: %d / %d" % [resourceManager.stars_charted, resourceManager.stars_charted_cap])
+	$Game_GUI/stars_charted/stars_charted_label.set_text("Stars Charted: %d / %d" % [resourceManager.stars_charted, resourceManager.stars_charted_cap])
 
 	$Game_GUI/resources/ship_resources/ship_hull.value = resourceManager.ship_hull
-	$Game_GUI/resources/ship_resources/ship_power_label.set_text("Power: %d" % [resourceManager.alien_power_delta])
-	$Game_GUI/resources/ship_resources/ship_water_label.set_text("Water: %d" % [resourceManager.human_water_delta])
+	$Game_GUI/resources/ship_resources/power/ship_power_label.set_text("Power: %d" % [resourceManager.alien_power_delta])
+	$Game_GUI/resources/ship_resources/water/ship_water_label.set_text("Water: %d" % [resourceManager.human_water_delta])
 
 	$Game_GUI/resources/alien_resources/alien_eggs.value = resourceManager.alien_eggs
-	$Game_GUI/resources/alien_resources/alien_power_label.set_text("Power: %d" % [resourceManager.alien_power_delta])
-	$Game_GUI/resources/alien_resources/alien_stress_label.set_text("Stress: %d" % [resourceManager.alien_stress_delta])
-	$Game_GUI/resources/alien_resources/alien_resource_label.set_text("???: %d" % [resourceManager.alien_mguffin_delta])
+	$Game_GUI/resources/alien_resources/power/alien_power_label.set_text("Power: %d" % [resourceManager.alien_power_delta])
+	$Game_GUI/resources/alien_resources/stress/alien_stress_label.set_text("Stress: %d" % [resourceManager.alien_stress_delta])
+	$Game_GUI/resources/alien_resources/mguffin/alien_resource_label.set_text("???: %d" % [resourceManager.alien_mguffin_delta])
 
 	$Game_GUI/resources/human_resources/human_pods.value = resourceManager.human_lifepods
-	$Game_GUI/resources/human_resources/human_food_label.set_text("Food: %d" % [resourceManager.human_food_delta])
-	$Game_GUI/resources/human_resources/human_water_label.set_text("Water: %d" % [resourceManager.human_water_delta])
-	$Game_GUI/resources/human_resources/human_stress_label.set_text("Stress: %d" % [resourceManager.human_stress_delta])
+	$Game_GUI/resources/human_resources/food/human_food_label.set_text("Food: %d" % [resourceManager.human_food_delta])
+	$Game_GUI/resources/human_resources/water/human_water_label.set_text("Water: %d" % [resourceManager.human_water_delta])
+	$Game_GUI/resources/human_resources/stress/human_stress_label.set_text("Stress: %d" % [resourceManager.human_stress_delta])
 
 func handle_game_done(resourceManager: ResourceManager) -> void:
 	if (resourceManager.stars_charted == resourceManager.stars_charted_cap):

@@ -41,6 +41,7 @@ func _on_assignment_selected(id: int) -> void:
 	$HBoxContainer/button_unassign.show()
 	$HBoxContainer/slot_name.show()
 	$HBoxContainer/slot_icon.show()
+	$HBoxContainer/slot_icon.texture = assigned_person.texture
 	$HBoxContainer/slot_effects.show()
 	$HBoxContainer/slot_name.set_text(assigned_person.name)
 	$HBoxContainer/slot_effects.set_text(TraitManager.get_traits_description(person, TraitManager.get_resources_affected_by_job(job_type)))

@@ -1,27 +1,26 @@
-[gd_scene load_steps=4 format=2]
+[gd_scene load_steps=19 format=2]
 
-[ext_resource path="res://icon.png" type="Texture" id=1]
+[ext_resource path="res://src/game/jobs/job_gather_food.png" type="Texture" id=1]
 [ext_resource path="res://src/game/game.gd" type="Script" id=2]
 [ext_resource path="res://src/game/jobs/jobs.tscn" type="PackedScene" id=3]
+[ext_resource path="res://src/game/jobs/job_chart_stars.png" type="Texture" id=4]
+[ext_resource path="res://src/game/jobs/job_generate_power2.png" type="Texture" id=5]
+[ext_resource path="res://src/game/jobs/job_reclaim_water.png" type="Texture" id=6]
+[ext_resource path="res://src/game/jobs/job_reduce_stress.PNG" type="Texture" id=7]
+[ext_resource path="res://src/game/jobs/job_mguffin.PNG" type="Texture" id=8]
+[ext_resource path="res://src/game/resources/resource_water.png" type="Texture" id=9]
+[ext_resource path="res://src/game/resources/resouce_stress.png" type="Texture" id=10]
+[ext_resource path="res://src/game/resources/resource_food.png" type="Texture" id=11]
+[ext_resource path="res://src/game/resources/resource_power.png" type="Texture" id=12]
+[ext_resource path="res://src/game/resources/resource_mguffin.png" type="Texture" id=13]
+[ext_resource path="res://src/game/resources/resource_human_lifepods.PNG" type="Texture" id=14]
+[ext_resource path="res://src/game/resources/resource_ship_hull.PNG" type="Texture" id=15]
+[ext_resource path="res://src/game/resources/resource_alien_eggs.PNG" type="Texture" id=16]
+[ext_resource path="res://src/game/resources/ui_expand_cycle.png" type="Texture" id=17]
+[ext_resource path="res://src/game/resources/resource_stars_charted.png" type="Texture" id=18]
 
 [node name="Node2D" type="Node2D"]
 script = ExtResource( 2 )
-
-[node name="border_1" type="Sprite" parent="."]
-position = Vector2( 32, 32 )
-texture = ExtResource( 1 )
-
-[node name="border_2" type="Sprite" parent="."]
-position = Vector2( 992, 32 )
-texture = ExtResource( 1 )
-
-[node name="border_3" type="Sprite" parent="."]
-position = Vector2( 32, 736 )
-texture = ExtResource( 1 )
-
-[node name="border_4" type="Sprite" parent="."]
-position = Vector2( 992, 736 )
-texture = ExtResource( 1 )
 
 [node name="Game_GUI" type="Control" parent="."]
 anchor_right = 1.0
@@ -30,31 +29,11 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="next_cycle_button" type="Button" parent="Game_GUI"]
-margin_left = 926.932
-margin_top = 734.27
-margin_right = 1006.93
-margin_bottom = 754.27
-text = "Next Cycle"
-__meta__ = {
-"_edit_use_anchors_": false
-}
-
-[node name="stars_charted" type="Label" parent="Game_GUI"]
-margin_left = 452.042
-margin_top = 17.7807
-margin_right = 573.042
-margin_bottom = 31.7807
-text = "Stars Charted: 3/10"
-__meta__ = {
-"_edit_use_anchors_": false
-}
-
 [node name="resources" type="HBoxContainer" parent="Game_GUI"]
-margin_left = 614.218
-margin_top = 29.591
-margin_right = 994.218
-margin_bottom = 187.591
+margin_left = 373.925
+margin_top = 20.3772
+margin_right = 753.925
+margin_bottom = 196.377
 custom_constants/separation = 15
 __meta__ = {
 "_edit_group_": true,
@@ -63,7 +42,7 @@ __meta__ = {
 
 [node name="human_resources" type="VBoxContainer" parent="Game_GUI/resources"]
 margin_right = 128.0
-margin_bottom = 158.0
+margin_bottom = 176.0
 __meta__ = {
 "_edit_use_anchors_": false
 }
@@ -73,46 +52,87 @@ margin_right = 128.0
 margin_bottom = 14.0
 text = "HUMAN RESOURCES"
 
-[node name="human_pods_label" type="Label" parent="Game_GUI/resources/human_resources"]
+[node name="lifepods" type="HBoxContainer" parent="Game_GUI/resources/human_resources"]
 margin_top = 18.0
 margin_right = 128.0
+margin_bottom = 50.0
+
+[node name="TextureRect" type="TextureRect" parent="Game_GUI/resources/human_resources/lifepods"]
+margin_right = 32.0
 margin_bottom = 32.0
+texture = ExtResource( 14 )
+
+[node name="human_pods_label" type="Label" parent="Game_GUI/resources/human_resources/lifepods"]
+margin_left = 36.0
+margin_top = 9.0
+margin_right = 94.0
+margin_bottom = 23.0
 text = "Life Pods"
 __meta__ = {
 "_edit_use_anchors_": false
 }
 
 [node name="human_pods" type="ProgressBar" parent="Game_GUI/resources/human_resources"]
-margin_top = 36.0
-margin_right = 128.0
-margin_bottom = 50.0
-value = 100.0
-
-[node name="human_water_label" type="Label" parent="Game_GUI/resources/human_resources"]
 margin_top = 54.0
 margin_right = 128.0
 margin_bottom = 68.0
-text = "Water"
+value = 100.0
 
-[node name="human_stress_label" type="Label" parent="Game_GUI/resources/human_resources"]
+[node name="water" type="HBoxContainer" parent="Game_GUI/resources/human_resources"]
 margin_top = 72.0
 margin_right = 128.0
-margin_bottom = 86.0
+margin_bottom = 104.0
+
+[node name="TextureRect" type="TextureRect" parent="Game_GUI/resources/human_resources/water"]
+margin_right = 32.0
+margin_bottom = 32.0
+texture = ExtResource( 9 )
+
+[node name="human_water_label" type="Label" parent="Game_GUI/resources/human_resources/water"]
+margin_left = 36.0
+margin_top = 9.0
+margin_right = 74.0
+margin_bottom = 23.0
+text = "Water"
+
+[node name="stress" type="HBoxContainer" parent="Game_GUI/resources/human_resources"]
+margin_top = 108.0
+margin_right = 128.0
+margin_bottom = 140.0
+
+[node name="TextureRect" type="TextureRect" parent="Game_GUI/resources/human_resources/stress"]
+margin_right = 32.0
+margin_bottom = 32.0
+texture = ExtResource( 10 )
+
+[node name="human_stress_label" type="Label" parent="Game_GUI/resources/human_resources/stress"]
+margin_left = 36.0
+margin_top = 9.0
+margin_right = 75.0
+margin_bottom = 23.0
 text = "Stress"
 
-[node name="human_food_label" type="Label" parent="Game_GUI/resources/human_resources"]
-margin_top = 90.0
+[node name="food" type="HBoxContainer" parent="Game_GUI/resources/human_resources"]
+margin_top = 144.0
 margin_right = 128.0
-margin_bottom = 104.0
+margin_bottom = 176.0
+
+[node name="TextureRect" type="TextureRect" parent="Game_GUI/resources/human_resources/food"]
+margin_right = 32.0
+margin_bottom = 32.0
+texture = ExtResource( 11 )
+
+[node name="human_food_label" type="Label" parent="Game_GUI/resources/human_resources/food"]
+margin_left = 36.0
+margin_top = 9.0
+margin_right = 67.0
+margin_bottom = 23.0
 text = "Food"
-__meta__ = {
-"_edit_use_anchors_": false
-}
 
 [node name="ship_resources" type="VBoxContainer" parent="Game_GUI/resources"]
 margin_left = 143.0
 margin_right = 250.0
-margin_bottom = 158.0
+margin_bottom = 176.0
 __meta__ = {
 "_edit_use_anchors_": false
 }
@@ -122,37 +142,76 @@ margin_right = 107.0
 margin_bottom = 14.0
 text = "SHIP RESOURCES"
 
-[node name="ship_hull_label" type="Label" parent="Game_GUI/resources/ship_resources"]
+[node name="hull" type="HBoxContainer" parent="Game_GUI/resources/ship_resources"]
 margin_top = 18.0
 margin_right = 107.0
+margin_bottom = 50.0
+
+[node name="TextureRect" type="TextureRect" parent="Game_GUI/resources/ship_resources/hull"]
+margin_right = 32.0
 margin_bottom = 32.0
+texture = ExtResource( 15 )
+
+[node name="ship_hull_label" type="Label" parent="Game_GUI/resources/ship_resources/hull"]
+margin_left = 36.0
+margin_top = 9.0
+margin_right = 62.0
+margin_bottom = 23.0
 text = "Hull"
 __meta__ = {
 "_edit_use_anchors_": false
 }
 
 [node name="ship_hull" type="ProgressBar" parent="Game_GUI/resources/ship_resources"]
-margin_top = 36.0
-margin_right = 107.0
-margin_bottom = 50.0
-value = 100.0
-
-[node name="ship_power_label" type="Label" parent="Game_GUI/resources/ship_resources"]
 margin_top = 54.0
 margin_right = 107.0
 margin_bottom = 68.0
-text = "Power"
+value = 100.0
 
-[node name="ship_water_label" type="Label" parent="Game_GUI/resources/ship_resources"]
+[node name="power" type="HBoxContainer" parent="Game_GUI/resources/ship_resources"]
 margin_top = 72.0
 margin_right = 107.0
-margin_bottom = 86.0
+margin_bottom = 104.0
+
+[node name="TextureRect" type="TextureRect" parent="Game_GUI/resources/ship_resources/power"]
+margin_right = 32.0
+margin_bottom = 32.0
+texture = ExtResource( 12 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="ship_power_label" type="Label" parent="Game_GUI/resources/ship_resources/power"]
+margin_left = 36.0
+margin_top = 9.0
+margin_right = 75.0
+margin_bottom = 23.0
+text = "Power"
+
+[node name="water" type="HBoxContainer" parent="Game_GUI/resources/ship_resources"]
+margin_top = 108.0
+margin_right = 107.0
+margin_bottom = 140.0
+
+[node name="TextureRect" type="TextureRect" parent="Game_GUI/resources/ship_resources/water"]
+margin_right = 32.0
+margin_bottom = 32.0
+texture = ExtResource( 9 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="ship_water_label" type="Label" parent="Game_GUI/resources/ship_resources/water"]
+margin_left = 36.0
+margin_top = 9.0
+margin_right = 74.0
+margin_bottom = 23.0
 text = "Water"
 
 [node name="alien_resources" type="VBoxContainer" parent="Game_GUI/resources"]
 margin_left = 265.0
 margin_right = 380.0
-margin_bottom = 158.0
+margin_bottom = 176.0
 __meta__ = {
 "_edit_use_anchors_": false
 }
@@ -162,57 +221,98 @@ margin_right = 115.0
 margin_bottom = 14.0
 text = "ALIEN RESOURCES"
 
-[node name="alien_eggs_label" type="Label" parent="Game_GUI/resources/alien_resources"]
+[node name="eggs" type="HBoxContainer" parent="Game_GUI/resources/alien_resources"]
 margin_top = 18.0
 margin_right = 115.0
+margin_bottom = 50.0
+
+[node name="TextureRect" type="TextureRect" parent="Game_GUI/resources/alien_resources/eggs"]
+margin_right = 32.0
 margin_bottom = 32.0
+texture = ExtResource( 16 )
+
+[node name="alien_eggs_label" type="Label" parent="Game_GUI/resources/alien_resources/eggs"]
+margin_left = 36.0
+margin_top = 9.0
+margin_right = 101.0
+margin_bottom = 23.0
 text = "Alien Eggs"
 __meta__ = {
 "_edit_use_anchors_": false
 }
 
 [node name="alien_eggs" type="ProgressBar" parent="Game_GUI/resources/alien_resources"]
-margin_top = 36.0
-margin_right = 115.0
-margin_bottom = 50.0
-value = 100.0
-
-[node name="alien_power_label" type="Label" parent="Game_GUI/resources/alien_resources"]
 margin_top = 54.0
 margin_right = 115.0
 margin_bottom = 68.0
-text = "Power"
+value = 100.0
 
-[node name="alien_stress_label" type="Label" parent="Game_GUI/resources/alien_resources"]
+[node name="power" type="HBoxContainer" parent="Game_GUI/resources/alien_resources"]
 margin_top = 72.0
 margin_right = 115.0
-margin_bottom = 86.0
+margin_bottom = 104.0
+
+[node name="TextureRect" type="TextureRect" parent="Game_GUI/resources/alien_resources/power"]
+margin_right = 32.0
+margin_bottom = 32.0
+texture = ExtResource( 12 )
+
+[node name="alien_power_label" type="Label" parent="Game_GUI/resources/alien_resources/power"]
+margin_left = 36.0
+margin_top = 9.0
+margin_right = 75.0
+margin_bottom = 23.0
+text = "Power"
+
+[node name="stress" type="HBoxContainer" parent="Game_GUI/resources/alien_resources"]
+margin_top = 108.0
+margin_right = 115.0
+margin_bottom = 140.0
+
+[node name="TextureRect" type="TextureRect" parent="Game_GUI/resources/alien_resources/stress"]
+margin_right = 32.0
+margin_bottom = 32.0
+texture = ExtResource( 10 )
+
+[node name="alien_stress_label" type="Label" parent="Game_GUI/resources/alien_resources/stress"]
+margin_left = 36.0
+margin_top = 9.0
+margin_right = 75.0
+margin_bottom = 23.0
 text = "Stress"
 
-[node name="alien_resource_label" type="Label" parent="Game_GUI/resources/alien_resources"]
-margin_top = 90.0
+[node name="mguffin" type="HBoxContainer" parent="Game_GUI/resources/alien_resources"]
+margin_top = 144.0
 margin_right = 115.0
-margin_bottom = 104.0
-text = "Alien Mguffin"
-__meta__ = {
-"_edit_use_anchors_": false
-}
+margin_bottom = 176.0
+
+[node name="TextureRect" type="TextureRect" parent="Game_GUI/resources/alien_resources/mguffin"]
+margin_right = 32.0
+margin_bottom = 32.0
+texture = ExtResource( 13 )
+
+[node name="alien_resource_label" type="Label" parent="Game_GUI/resources/alien_resources/mguffin"]
+margin_left = 36.0
+margin_top = 9.0
+margin_right = 83.0
+margin_bottom = 23.0
+text = "Mguffin"
 
 [node name="cycle_info" type="Label" parent="Game_GUI"]
-margin_left = 931.359
-margin_top = 711.0
-margin_right = 981.359
-margin_bottom = 725.0
+margin_left = 682.246
+margin_top = 508.323
+margin_right = 732.246
+margin_bottom = 522.323
 text = "Cycle: 1"
 __meta__ = {
 "_edit_use_anchors_": false
 }
 
 [node name="jobs" type="VBoxContainer" parent="Game_GUI"]
-margin_left = 17.2321
-margin_top = 79.0358
-margin_right = 250.232
-margin_bottom = 309.036
+margin_left = 12.3765
+margin_top = 16.8844
+margin_right = 245.376
+margin_bottom = 246.885
 custom_constants/separation = 10
 __meta__ = {
 "_edit_group_": true,
@@ -220,44 +320,97 @@ __meta__ = {
 }
 
 [node name="chart_stars_job" parent="Game_GUI/jobs" instance=ExtResource( 3 )]
-margin_right = 400.0
-margin_bottom = 67.0
+margin_right = 232.0
+margin_bottom = 30.0
 Job_Title = "Chart the Stars"
+Job_Texture = ExtResource( 4 )
 
 [node name="generate_power" parent="Game_GUI/jobs" instance=ExtResource( 3 )]
-margin_top = 77.0
-margin_right = 400.0
-margin_bottom = 144.0
+margin_top = 40.0
+margin_right = 232.0
+margin_bottom = 70.0
 Job_Title = "Generate Power"
 Job_Type = 1
 Max_Occupancy = 2
+Job_Texture = ExtResource( 5 )
 
 [node name="generate_food" parent="Game_GUI/jobs" instance=ExtResource( 3 )]
-margin_top = 154.0
-margin_right = 400.0
-margin_bottom = 221.0
+margin_top = 80.0
+margin_right = 232.0
+margin_bottom = 110.0
 Job_Title = "Generate Food"
 Job_Type = 2
+Job_Texture = ExtResource( 1 )
 
 [node name="reduce_stress" parent="Game_GUI/jobs" instance=ExtResource( 3 )]
-margin_top = 231.0
-margin_right = 400.0
-margin_bottom = 298.0
+margin_top = 120.0
+margin_right = 232.0
+margin_bottom = 150.0
 Job_Title = "Reduce Stress"
 Job_Type = 3
+Job_Texture = ExtResource( 7 )
 
 [node name="reclaim_water" parent="Game_GUI/jobs" instance=ExtResource( 3 )]
-margin_top = 308.0
-margin_right = 400.0
-margin_bottom = 375.0
+margin_top = 160.0
+margin_right = 232.0
+margin_bottom = 190.0
 Job_Title = "Reclaim Water"
 Job_Type = 4
+Job_Texture = ExtResource( 6 )
 
 [node name="generate_mguffin" parent="Game_GUI/jobs" instance=ExtResource( 3 )]
-margin_top = 385.0
-margin_right = 400.0
-margin_bottom = 452.0
+margin_top = 200.0
+margin_right = 232.0
+margin_bottom = 230.0
 Job_Title = "Mguffin"
 Job_Type = 5
+Job_Texture = ExtResource( 8 )
+
+[node name="next_cycle_button" type="TextureButton" parent="Game_GUI"]
+margin_left = 703.25
+margin_top = 553.911
+margin_right = 735.25
+margin_bottom = 585.911
+texture_normal = ExtResource( 17 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="next_cycle_label" type="Label" parent="Game_GUI"]
+margin_left = 600.088
+margin_top = 562.525
+margin_right = 692.088
+margin_bottom = 576.525
+text = "Advance Cycle"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="stars_charted" type="Control" parent="Game_GUI"]
+margin_right = 40.0
+margin_bottom = 40.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="TextureRect" type="TextureRect" parent="Game_GUI/stars_charted"]
+margin_left = 578.475
+margin_top = 454.848
+margin_right = 610.475
+margin_bottom = 486.848
+texture = ExtResource( 18 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="stars_charted_label" type="Label" parent="Game_GUI/stars_charted"]
+margin_left = 616.813
+margin_top = 463.391
+margin_right = 737.813
+margin_bottom = 477.391
+text = "Stars Charted: 3/10"
+__meta__ = {
+"_edit_use_anchors_": false
+}
 
 [connection signal="pressed" from="Game_GUI/next_cycle_button" to="." method="_on_next_cycle_button_pressed"]

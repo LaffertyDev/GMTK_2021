@@ -73,7 +73,7 @@ Globals="*res://src/globals.gd"
 
 [display]
 
-window/size/height=768
+window/size/width=767
 
 [physics]
 

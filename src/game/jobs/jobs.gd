@@ -7,12 +7,14 @@ const TraitManager = preload("res://src/game/traits/trait_manager.gd")
 export(String) var Job_Title = "{{ Job Label }}"
 export(JobTypes.JobTypes) var Job_Type = JobTypes.JobTypes.chart_stars
 export(int) var Max_Occupancy = 1
+export(Texture) var Job_Texture
 
 signal job_assignment_changed()
 
 func _ready() -> void:
 	add_to_group("jobs")
 	add_to_group("cyclables")
+	$HBoxContainer/job_icon.texture = Job_Texture
 	var job_assignment_res = load("res://src/game/jobs/job_assignment_slot.tscn")
 	for _x in range(0, Max_Occupancy):
 		var job_assignment = job_assignment_res.instance()
