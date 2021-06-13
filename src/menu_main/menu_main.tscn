@@ -113,10 +113,10 @@ __meta__ = {
 margin_left = 434.053
 margin_top = 340.615
 margin_right = 787.053
-margin_bottom = 433.615
+margin_bottom = 505.615
 text = "- Chart the stars to find Earth.
 
-- You must chart 10 stars to discover Earth
+- You must chart 6 stars to discover Earth
 
 - Hover over your crew to discover what they do."
 autowrap = true

@@ -6,16 +6,16 @@
 [ext_resource path="res://src/game/jobs/job_chart_stars.png" type="Texture" id=4]
 [ext_resource path="res://src/game/jobs/job_generate_power2.png" type="Texture" id=5]
 [ext_resource path="res://src/game/jobs/job_reclaim_water.png" type="Texture" id=6]
-[ext_resource path="res://src/game/jobs/job_reduce_stress.PNG" type="Texture" id=7]
-[ext_resource path="res://src/game/jobs/job_mguffin.PNG" type="Texture" id=8]
+[ext_resource path="res://src/game/jobs/job_reduce_stress.png" type="Texture" id=7]
+[ext_resource path="res://src/game/jobs/job_mguffin.png" type="Texture" id=8]
 [ext_resource path="res://src/game/resources/resource_water.png" type="Texture" id=9]
 [ext_resource path="res://src/game/resources/resouce_stress.png" type="Texture" id=10]
 [ext_resource path="res://src/game/resources/resource_food.png" type="Texture" id=11]
 [ext_resource path="res://src/game/resources/resource_power.png" type="Texture" id=12]
 [ext_resource path="res://src/game/resources/resource_mguffin.png" type="Texture" id=13]
-[ext_resource path="res://src/game/resources/resource_human_lifepods.PNG" type="Texture" id=14]
-[ext_resource path="res://src/game/resources/resource_ship_hull.PNG" type="Texture" id=15]
-[ext_resource path="res://src/game/resources/resource_alien_eggs.PNG" type="Texture" id=16]
+[ext_resource path="res://src/game/resources/resource_human_lifepods.png" type="Texture" id=14]
+[ext_resource path="res://src/game/resources/resource_ship_hull.png" type="Texture" id=15]
+[ext_resource path="res://src/game/resources/resource_alien_eggs.png" type="Texture" id=16]
 [ext_resource path="res://src/game/resources/ui_expand_cycle.png" type="Texture" id=17]
 [ext_resource path="res://src/game/resources/resource_stars_charted.png" type="Texture" id=18]
 [ext_resource path="res://src/game/ui_assets/nebulaset.png" type="Texture" id=19]
@@ -324,53 +324,53 @@ __meta__ = {
 }
 
 [node name="chart_stars_job" parent="Game_GUI/jobs" instance=ExtResource( 3 )]
-margin_right = 400.0
-margin_bottom = 340.0
+margin_right = 124.0
+margin_bottom = 35.0
 Job_Title = "Chart the Stars"
 Job_Texture = ExtResource( 4 )
 
 [node name="generate_power" parent="Game_GUI/jobs" instance=ExtResource( 3 )]
-margin_left = 404.0
-margin_right = 804.0
-margin_bottom = 340.0
+margin_left = 128.0
+margin_right = 252.0
+margin_bottom = 35.0
 Job_Title = "Generate Power"
 Job_Type = 1
 Max_Occupancy = 2
 Job_Texture = ExtResource( 5 )
 
 [node name="generate_food" parent="Game_GUI/jobs" instance=ExtResource( 3 )]
-margin_top = 355.0
-margin_right = 400.0
-margin_bottom = 695.0
+margin_top = 50.0
+margin_right = 124.0
+margin_bottom = 85.0
 Job_Title = "Generate Food"
 Job_Type = 2
 Max_Occupancy = 2
 Job_Texture = ExtResource( 1 )
 
 [node name="reduce_stress" parent="Game_GUI/jobs" instance=ExtResource( 3 )]
-margin_left = 404.0
-margin_top = 355.0
-margin_right = 804.0
-margin_bottom = 695.0
+margin_left = 128.0
+margin_top = 50.0
+margin_right = 252.0
+margin_bottom = 85.0
 Job_Title = "Reduce Stress"
 Job_Type = 3
 Max_Occupancy = 2
 Job_Texture = ExtResource( 7 )
 
 [node name="reclaim_water" parent="Game_GUI/jobs" instance=ExtResource( 3 )]
-margin_top = 710.0
-margin_right = 400.0
-margin_bottom = 1050.0
+margin_top = 100.0
+margin_right = 124.0
+margin_bottom = 135.0
 Job_Title = "Reclaim Water"
 Job_Type = 4
 Max_Occupancy = 2
 Job_Texture = ExtResource( 6 )
 
 [node name="hunt_beatles" parent="Game_GUI/jobs" instance=ExtResource( 3 )]
-margin_left = 404.0
-margin_top = 710.0
-margin_right = 804.0
-margin_bottom = 1050.0
+margin_left = 128.0
+margin_top = 100.0
+margin_right = 252.0
+margin_bottom = 135.0
 Job_Title = "Hunt Beatles"
 Job_Type = 5
 Max_Occupancy = 2

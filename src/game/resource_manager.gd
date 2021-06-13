@@ -17,7 +17,7 @@ var human_lifepods = 100
 
 var current_cycle = 0
 var stars_charted = 0
-var stars_charted_cap = 10
+var stars_charted_cap = 6
 
 func recompute_deltas(jobs: Array, people: Array) -> void:
 

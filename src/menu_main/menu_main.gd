@@ -13,6 +13,7 @@ func _ready():
 func _on_start_game_pressed():
 	var err = get_tree().change_scene("res://src/game/game.tscn")
 	if err != OK:
+		OS.alert("error", str(err))
 		print("There was a failure changing the scene")
 
 func _on_load_options_pressed():
