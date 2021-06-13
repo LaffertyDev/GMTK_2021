@@ -11,7 +11,7 @@ var traits: Array # array of traits that apply to this Person
 var texture: Texture
 
 func get_individual_resource_effect(resource: int) -> int:
-	var amount_to_adjust = 2
+	var amount_to_adjust = 1
 	for trait in traits:
 		if trait.trait_type == Enums.TraitTypes.GENERATIVE_EFFECT && trait.resource_affected == resource:
 			amount_to_adjust += trait.generative_effect

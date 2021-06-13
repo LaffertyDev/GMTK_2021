@@ -19,13 +19,13 @@ func _on_button_assign_pressed():
 	var job_assignment_popup = PopupMenu.new()
 	var personManager = get_tree().get_nodes_in_group("game_root")[0].person_manager
 	var unassignedPersons = personManager.get_unassigned_persons()
+	var person_idx = 0
 	for person in unassignedPersons:
-		var job_assignment_string = person.name
-		if job_type == JobTypes.JobTypes.chart_stars:
-			job_assignment_popup.add_icon_item(person.texture, person.name, person.id)
-		else:
-			job_assignment_string += " " + TraitManager.get_traits_description(person, TraitManager.get_resources_affected_by_job(job_type))
-			job_assignment_popup.add_icon_item(person.texture, job_assignment_string, person.id)
+		job_assignment_popup.add_icon_item(person.texture, person.name, person.id)
+		if job_type != JobTypes.JobTypes.chart_stars:
+			var tooltip = TraitManager.get_traits_description(person, TraitManager.get_resources_affected_by_job(job_type), false)
+			job_assignment_popup.set_item_tooltip(person_idx, tooltip)
+			person_idx += 1
 
 	add_child(job_assignment_popup)
 	job_assignment_popup.popup_centered()
@@ -43,7 +43,7 @@ func _on_assignment_selected(id: int) -> void:
 	$HBoxContainer/slot_icon.texture = assigned_person.texture
 	$HBoxContainer/slot_effects.show()
 	$HBoxContainer/slot_name.set_text(assigned_person.name)
-	$HBoxContainer/slot_effects.set_text(TraitManager.get_traits_description(person, TraitManager.get_resources_affected_by_job(job_type)))
+	$HBoxContainer/slot_effects.set_text(TraitManager.get_traits_description(person, TraitManager.get_resources_affected_by_job(job_type), true))
 	emit_signal("job_assignment_changed")
 		
 func _on_post_cycle():

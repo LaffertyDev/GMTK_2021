@@ -19,13 +19,31 @@ var current_cycle = 0
 var stars_charted = 0
 var stars_charted_cap = 10
 
-func recompute_deltas(jobs: Array) -> void:
-	self.alien_power_delta = -4
-	self.alien_stress_delta = -4
-	self.alien_mguffin_delta = -2
-	self.human_water_delta = -3
-	self.human_stress_delta = -3
-	self.human_food_delta = -3
+func recompute_deltas(jobs: Array, people: Array) -> void:
+
+	self.alien_power_delta = 0
+	self.alien_stress_delta = 0
+	self.alien_mguffin_delta = 0
+	self.human_water_delta = 0
+	self.human_stress_delta = 0
+	self.human_food_delta = 0
+
+	for person in people:
+		for need in person.get_needs():
+			match(need.resource_affected):
+				(Enums.ShipResources.WATER):
+					self.human_water_delta += need.generative_effect
+				(Enums.ShipResources.FOOD):
+					self.human_food_delta += need.generative_effect
+				(Enums.ShipResources.POWER):
+					self.alien_power_delta += need.generative_effect
+				(Enums.ShipResources.STRESS):
+					if person.race == Enums.Race.Human:
+						self.human_stress_delta += need.generative_effect
+					else:
+						self.alien_stress_delta += need.generative_effect
+				(Enums.ShipResources.MGUFFIN):
+					self.alien_mguffin_delta += need.generative_effect
 
 	for job in jobs:
 		job.adjust_resources(self)

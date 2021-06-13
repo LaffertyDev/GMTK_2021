@@ -15,6 +15,7 @@ func _ready() -> void:
 	var jobs = get_tree().get_nodes_in_group("jobs")
 	for job in jobs:
 		var _1 = job.connect("job_assignment_changed", self, "_on_job_assignment_changed")
+	resource_manager.recompute_deltas([], person_manager.persons)
 	sync_ui(resource_manager)
 
 func _input(event) -> void:
@@ -34,7 +35,7 @@ func _on_next_cycle_button_pressed() -> void:
 
 func _on_job_assignment_changed() -> void:
 	var jobs = get_tree().get_nodes_in_group("jobs")
-	resource_manager.recompute_deltas(jobs)
+	resource_manager.recompute_deltas(jobs, person_manager.persons)
 
 	sync_ui(resource_manager)
 
