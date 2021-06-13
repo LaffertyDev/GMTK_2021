@@ -62,7 +62,8 @@ _global_script_class_icons={
 
 [application]
 
-config/name="GMTK_2021_Joined_Together"
+config/name="Chart the Stars"
+config/description="Chart the Stars.... with unexpected guests"
 run/main_scene="res://src/menu_main/menu_main.tscn"
 config/icon="res://icon.png"
 

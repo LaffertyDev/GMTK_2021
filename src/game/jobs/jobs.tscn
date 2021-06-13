@@ -11,7 +11,7 @@ __meta__ = {
 }
 
 [node name="HBoxContainer" type="HBoxContainer" parent="."]
-margin_right = 124.0
+margin_right = 400.0
 margin_bottom = 30.0
 __meta__ = {
 "_edit_use_anchors_": true
@@ -36,9 +36,22 @@ margin_right = 209.0
 margin_bottom = 30.0
 text = "+"
 
-[node name="paired_trait_display" parent="." instance=ExtResource( 2 )]
+[node name="job_assignments" type="MarginContainer" parent="."]
 margin_top = 35.0
 margin_right = 400.0
-margin_bottom = 335.0
+margin_bottom = 35.0
+custom_constants/margin_left = 32
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="list" type="VBoxContainer" parent="job_assignments"]
+margin_left = 32.0
+margin_right = 400.0
+
+[node name="paired_trait_display" parent="." instance=ExtResource( 2 )]
+margin_top = 40.0
+margin_right = 400.0
+margin_bottom = 340.0
 
 [connection signal="pressed" from="HBoxContainer/view_pair_effect_button" to="." method="_on_view_pair_effect_button_pressed"]

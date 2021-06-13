@@ -20,7 +20,7 @@ func _ready() -> void:
 		var job_assignment = job_assignment_res.instance()
 		job_assignment.job_type = Job_Type
 		job_assignment.connect("job_assignment_changed", self, "_on_assignment_changed")
-		add_child_below_node($HBoxContainer, job_assignment)
+		$job_assignments/list.add_child(job_assignment)
 
 	$HBoxContainer/job_label.set_text(Job_Title)
 
