@@ -22,10 +22,10 @@ func _on_button_assign_pressed():
 	for person in unassignedPersons:
 		var job_assignment_string = person.name
 		if job_type == JobTypes.JobTypes.chart_stars:
-			job_assignment_popup.add_item(person.name, person.id)
+			job_assignment_popup.add_icon_item(person.texture, person.name, person.id)
 		else:
 			job_assignment_string += " " + TraitManager.get_traits_description(person, TraitManager.get_resources_affected_by_job(job_type))
-			job_assignment_popup.add_item(job_assignment_string, person.id)
+			job_assignment_popup.add_icon_item(person.texture, job_assignment_string, person.id)
 
 	add_child(job_assignment_popup)
 	job_assignment_popup.popup_centered()
