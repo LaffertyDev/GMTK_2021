@@ -20,21 +20,21 @@ func apply_pair_effect_on_cycle(personManager) -> void:
 	bob.name = "Captain Bob"
 	bob.traits.append(traitBuilder.build_trait(
 		"Leadership Aura"
-		, "Bob has a commanding presence... (+30 Power)"
+		, "Bob has a commanding presence... (+5 Power)"
 		, Enums.TraitTypes.NEED
-		, Enums.ShipResources.POWER, 30))
+		, Enums.ShipResources.POWER, 5))
 	bob.traits.append(traitBuilder.build_trait(
 		"Leadership Aura"
-		, "Bob has a commanding presence... (+30 Food)"
+		, "Bob has a commanding presence... (+5 Food)"
 		, Enums.TraitTypes.NEED
-		, Enums.ShipResources.FOOD, 30))
+		, Enums.ShipResources.FOOD, 5))
 	bob.traits.append(traitBuilder.build_trait(
 		"Leadership Aura"
-		, "Bob has a commanding presence... (+30 Water)"
+		, "Bob has a commanding presence... (+5 Water)"
 		, Enums.TraitTypes.NEED
-		, Enums.ShipResources.WATER, 30))
+		, Enums.ShipResources.WATER, 5))
 	bob.traits.append(traitBuilder.build_trait(
 		"Leadership Aura"
-		, "Bob has a commanding presence... (+30 Beatles)"
+		, "Bob has a commanding presence... (+5 Beatles)"
 		, Enums.TraitTypes.NEED
-		, Enums.ShipResources.BEATLES, 30))
+		, Enums.ShipResources.BEATLES, 5))
