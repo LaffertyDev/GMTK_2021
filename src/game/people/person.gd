@@ -10,7 +10,7 @@ var traits: Array # array of traits that apply to this Person
 var texture: Texture
 
 func get_individual_resource_effect(resource: int) -> int:
-	var amount_to_adjust = 10
+	var amount_to_adjust = 2
 	for trait in traits:
 		if trait.individual && trait.resource_affected == resource:
 			amount_to_adjust += trait.generative_effect

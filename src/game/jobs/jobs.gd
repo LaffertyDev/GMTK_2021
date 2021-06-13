@@ -28,9 +28,25 @@ func _on_assignment_changed():
 	emit_signal("job_assignment_changed")
 
 func adjust_resources(resourceManager: ResourceManager) -> void:
+
 	var affected_resources = TraitManager.get_resources_affected_by_job(Job_Type)
 	var personManager = get_tree().get_nodes_in_group("game_root")[0].person_manager
 	var assigned_persons = personManager.get_persons_assigned_to(Job_Type)
+	if assigned_persons.size() > 0:
+		match(Job_Type):
+			(JobTypes.JobTypes.chart_stars):
+				resourceManager.alien_power_delta -= 15
+			(JobTypes.JobTypes.generate_power):
+				resourceManager.human_water_delta -= 1
+			(JobTypes.JobTypes.generate_food):
+				pass
+			(JobTypes.JobTypes.reduce_stress):
+				pass
+			(JobTypes.JobTypes.reclaim_water):
+				pass
+			(JobTypes.JobTypes.mguffin):
+				pass
+
 	for person in assigned_persons:
 		for affected_resource in affected_resources:
 			var individual_effect = person.get_individual_resource_effect(affected_resource)

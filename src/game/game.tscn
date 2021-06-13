@@ -340,6 +340,7 @@ margin_right = 232.0
 margin_bottom = 110.0
 Job_Title = "Generate Food"
 Job_Type = 2
+Max_Occupancy = 2
 Job_Texture = ExtResource( 1 )
 
 [node name="reduce_stress" parent="Game_GUI/jobs" instance=ExtResource( 3 )]
@@ -348,6 +349,7 @@ margin_right = 232.0
 margin_bottom = 150.0
 Job_Title = "Reduce Stress"
 Job_Type = 3
+Max_Occupancy = 2
 Job_Texture = ExtResource( 7 )
 
 [node name="reclaim_water" parent="Game_GUI/jobs" instance=ExtResource( 3 )]
@@ -356,6 +358,7 @@ margin_right = 232.0
 margin_bottom = 190.0
 Job_Title = "Reclaim Water"
 Job_Type = 4
+Max_Occupancy = 2
 Job_Texture = ExtResource( 6 )
 
 [node name="generate_mguffin" parent="Game_GUI/jobs" instance=ExtResource( 3 )]
@@ -364,6 +367,7 @@ margin_right = 232.0
 margin_bottom = 230.0
 Job_Title = "Mguffin"
 Job_Type = 5
+Max_Occupancy = 2
 Job_Texture = ExtResource( 8 )
 
 [node name="next_cycle_button" type="TextureButton" parent="Game_GUI"]

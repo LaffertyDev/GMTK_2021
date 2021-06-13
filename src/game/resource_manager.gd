@@ -20,9 +20,9 @@ var stars_charted = 0
 var stars_charted_cap = 10
 
 func recompute_deltas(jobs: Array) -> void:
-	self.alien_power_delta = -3
-	self.alien_stress_delta = -3
-	self.alien_mguffin_delta = -3
+	self.alien_power_delta = -4
+	self.alien_stress_delta = -4
+	self.alien_mguffin_delta = -2
 	self.human_water_delta = -3
 	self.human_stress_delta = -3
 	self.human_food_delta = -3
