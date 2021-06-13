@@ -43,10 +43,10 @@ text = "{{ Person Name }}"
 
 [node name="slot_effects" type="Label" parent="HBoxContainer"]
 visible = false
-margin_left = 286.0
-margin_top = 9.0
-margin_right = 384.0
-margin_bottom = 23.0
+margin_left = 76.0
+margin_top = 5.0
+margin_right = 210.0
+margin_bottom = 26.0
 text = "{{ Slot Effects }}"
 
 [connection signal="pressed" from="HBoxContainer/button_assign" to="." method="_on_button_assign_pressed"]

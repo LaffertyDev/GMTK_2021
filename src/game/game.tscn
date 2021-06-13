@@ -33,10 +33,10 @@ __meta__ = {
 }
 
 [node name="resources" type="HBoxContainer" parent="Game_GUI"]
-margin_left = 236.862
-margin_top = 13.2399
-margin_right = 787.862
-margin_bottom = 203.24
+margin_left = 245.0
+margin_top = 5.0
+margin_right = 796.0
+margin_bottom = 195.0
 custom_constants/separation = 15
 __meta__ = {
 "_edit_group_": true,
@@ -302,10 +302,10 @@ margin_bottom = 26.0
 text = "Stress"
 
 [node name="cycle_info" type="Label" parent="Game_GUI"]
-margin_left = 9.21948
-margin_top = 54.6777
-margin_right = 80.2195
-margin_bottom = 72.6777
+margin_left = 5.0
+margin_top = 40.0
+margin_right = 76.0
+margin_bottom = 61.0
 text = "Cycle: 1"
 __meta__ = {
 "_edit_use_anchors_": false
@@ -376,26 +376,6 @@ Job_Type = 5
 Max_Occupancy = 2
 Job_Texture = ExtResource( 8 )
 
-[node name="next_cycle_button" type="TextureButton" parent="Game_GUI"]
-margin_left = 756.015
-margin_top = 555.613
-margin_right = 788.015
-margin_bottom = 587.613
-texture_normal = ExtResource( 17 )
-__meta__ = {
-"_edit_use_anchors_": false
-}
-
-[node name="next_cycle_label" type="Label" parent="Game_GUI"]
-margin_left = 615.605
-margin_top = 563.752
-margin_right = 751.605
-margin_bottom = 581.752
-text = "Advance Cycle"
-__meta__ = {
-"_edit_use_anchors_": false
-}
-
 [node name="stars_charted" type="Control" parent="Game_GUI"]
 margin_right = 40.0
 margin_bottom = 40.0
@@ -404,31 +384,42 @@ __meta__ = {
 }
 
 [node name="TextureRect" type="TextureRect" parent="Game_GUI/stars_charted"]
-margin_left = 8.17316
-margin_top = 12.7617
-margin_right = 40.1732
-margin_bottom = 44.7617
+margin_left = 5.0
+margin_top = 5.0
+margin_right = 37.0
+margin_bottom = 37.0
 texture = ExtResource( 18 )
 __meta__ = {
 "_edit_use_anchors_": false
 }
 
 [node name="stars_charted_label" type="Label" parent="Game_GUI/stars_charted"]
-margin_left = 46.5112
-margin_top = 21.3047
-margin_right = 223.511
-margin_bottom = 39.3047
+margin_left = 43.511
+margin_top = 13.0
+margin_right = 220.511
+margin_bottom = 34.0
 text = "Stars Charted: 3/10"
 __meta__ = {
 "_edit_use_anchors_": false
 }
 
 [node name="view_people_button" type="Button" parent="Game_GUI"]
-margin_left = 14.1121
-margin_top = 564.483
-margin_right = 116.112
-margin_bottom = 588.483
+margin_left = 5.0
+margin_top = 555.0
+margin_right = 117.0
+margin_bottom = 593.0
 text = "View Crew"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="next_cycle_button" type="Button" parent="Game_GUI"]
+margin_left = 611.0
+margin_top = 555.0
+margin_right = 793.0
+margin_bottom = 593.0
+text = "Advance Cycle"
+icon = ExtResource( 17 )
 __meta__ = {
 "_edit_use_anchors_": false
 }
@@ -442,5 +433,5 @@ __meta__ = {
 "_edit_lock_": true
 }
 
-[connection signal="pressed" from="Game_GUI/next_cycle_button" to="." method="_on_next_cycle_button_pressed"]
 [connection signal="pressed" from="Game_GUI/view_people_button" to="." method="_on_view_people_button_pressed"]
+[connection signal="pressed" from="Game_GUI/next_cycle_button" to="." method="_on_next_cycle_button_pressed"]
