@@ -11,22 +11,22 @@ func _init():
 	var trait1 = []
 	trait1.append(traitBuilder.build_trait(
 		"Sniffer's nose"
-		, "The Captain has a nose for even the most well-hid snacks"
+		, "The Captain has a nose for even the most well-hid snacks (Generate +4 Food)"
 		, Enums.TraitTypes.GENERATIVE_EFFECT
 		, Enums.ShipResources.FOOD, 4))
 	trait1.append(traitBuilder.build_trait(
 		"Gotta Eat"
-		, "Human's Gotta Eat"
+		, "Human's Gotta Eat (-1 Food / cycle)"
 		, Enums.TraitTypes.NEED
 		, Enums.ShipResources.FOOD, -1))
 	trait1.append(traitBuilder.build_trait(
 		"Gotta Drink"
-		, "Human's Gotta Drink"
+		, "Human's Gotta Drink (-1 Water / cycle)"
 		, Enums.TraitTypes.NEED
 		, Enums.ShipResources.WATER, -1))
 	trait1.append(traitBuilder.build_trait(
 		"Stressed Out"
-		, "Human's have been known to get a little stressed..."
+		, "Human's have been known to get a little stressed... (-1 Stress / cycle)"
 		, Enums.TraitTypes.NEED
 		, Enums.ShipResources.STRESS, -1))
 	persons.append(Build(1, "Captain Andersen", Enums.Race.Human, trait1, load("res://src/game/people/people_human_1.png")))
@@ -34,22 +34,22 @@ func _init():
 	var trait2 = []
 	trait2.append(traitBuilder.build_trait(
 		"A fine collection"
-		, "The XO has been knows where the best drink is"
+		, "The XO has been knows where the best drink is (Generate +2 Water)"
 		, Enums.TraitTypes.GENERATIVE_EFFECT
 		, Enums.ShipResources.WATER, 2))
 	trait2.append(traitBuilder.build_trait(
 		"Gotta Eat"
-		, "Human's Gotta Eat"
+		, "Human's Gotta Eat (-1 Food / cycle)"
 		, Enums.TraitTypes.NEED
 		, Enums.ShipResources.FOOD, -1))
 	trait2.append(traitBuilder.build_trait(
 		"Gotta Drink"
-		, "Human's Gotta Drink"
+		, "Human's Gotta Drink (-1 Water / cycle)"
 		, Enums.TraitTypes.NEED
 		, Enums.ShipResources.WATER, -1))
 	trait2.append(traitBuilder.build_trait(
 		"Stressed Out"
-		, "Human's have been known to get a little stressed..."
+		, "Human's have been known to get a little stressed... (-1 Stress / cycle)"
 		, Enums.TraitTypes.NEED
 		, Enums.ShipResources.STRESS, -1))
 	persons.append(Build(2, "XO Harris", Enums.Race.Human, trait2, load("res://src/game/people/people_human_2.png")))
@@ -57,22 +57,22 @@ func _init():
 	var trait3 = []
 	trait3.append(traitBuilder.build_trait(
 		"Mind of Numbers"
-		, "Emily is well-versed in Power and Power generation"
+		, "Emily is well-versed in Power and Power generation (Generate +2 Power)"
 		, Enums.TraitTypes.GENERATIVE_EFFECT
 		, Enums.ShipResources.POWER, 2))
 	trait3.append(traitBuilder.build_trait(
 		"Gotta Eat"
-		, "Human's Gotta Eat"
+		, "Human's Gotta Eat (-1 Food / cycle)"
 		, Enums.TraitTypes.NEED
 		, Enums.ShipResources.FOOD, -1))
 	trait3.append(traitBuilder.build_trait(
 		"Gotta Drink"
-		, "Human's Gotta Drink"
+		, "Human's Gotta Drink (-1 Water / cycle)"
 		, Enums.TraitTypes.NEED
 		, Enums.ShipResources.WATER, -1))
 	trait3.append(traitBuilder.build_trait(
 		"Stressed Out"
-		, "Human's have been known to get a little stressed..."
+		, "Human's have been known to get a little stressed... (-1 Stress / cycle)"
 		, Enums.TraitTypes.NEED
 		, Enums.ShipResources.STRESS, -1))
 	persons.append(Build(3, "Chief Engineer Emily", Enums.Race.Human, trait3, load("res://src/game/people/people_human_3.png")))
@@ -80,22 +80,22 @@ func _init():
 	var trait4 = []
 	trait4.append(traitBuilder.build_trait(
 		"There is no spoon"
-		, "Kurry is a calming presence to those around him"
+		, "Kurry is a calming presence to those around him (Generate +2 Stress)"
 		, Enums.TraitTypes.GENERATIVE_EFFECT
 		, Enums.ShipResources.STRESS, 2))
 	trait4.append(traitBuilder.build_trait(
 		"Gotta Eat"
-		, "Human's Gotta Eat"
+		, "Human's Gotta Eat (-1 Food / cycle)"
 		, Enums.TraitTypes.NEED
 		, Enums.ShipResources.FOOD, -1))
 	trait4.append(traitBuilder.build_trait(
 		"Gotta Drink"
-		, "Human's Gotta Drink"
+		, "Human's Gotta Drink (-1 Water / cycle)"
 		, Enums.TraitTypes.NEED
 		, Enums.ShipResources.WATER, -1))
 	trait4.append(traitBuilder.build_trait(
 		"Stressed Out"
-		, "Human's have been known to get a little stressed..."
+		, "Human's have been known to get a little stressed... (-1 Stress / cycle)"
 		, Enums.TraitTypes.NEED
 		, Enums.ShipResources.STRESS, -1))
 	persons.append(Build(4, "Medical Officer Kurry", Enums.Race.Human, trait4, load("res://src/game/people/people_human_4.png")))
@@ -103,22 +103,22 @@ func _init():
 	var trait5 = []
 	trait5.append(traitBuilder.build_trait(
 		"Power beacon?"
-		, "Glog'na appears to attach itself to nearby Power Conduits"
+		, "Glog'na appears to attach itself to nearby Power Conduits (Generate +2 Power)"
 		, Enums.TraitTypes.GENERATIVE_EFFECT
 		, Enums.ShipResources.POWER, 2))
 	trait5.append(traitBuilder.build_trait(
 		"Power Hungry"
-		, "The Alien's appear to siphoning some power..."
+		, "The Alien's appear to siphoning some power... (-1 Power / cycle)"
 		, Enums.TraitTypes.NEED
 		, Enums.ShipResources.POWER, -1))
 	trait5.append(traitBuilder.build_trait(
 		"Song of my People"
-		, "The alure of the Beatle"
+		, "The alure of the Beatle (-1 Beatle / cycle)"
 		, Enums.TraitTypes.NEED
 		, Enums.ShipResources.BEATLES, -1))
 	trait5.append(traitBuilder.build_trait(
 		"Time Bomb"
-		, "The Alien's appear to siphoning some power..."
+		, "The Alien's appear to siphoning some power... (-1 Stress / cycle)"
 		, Enums.TraitTypes.NEED
 		, Enums.ShipResources.STRESS, -1))
 	persons.append(Build(5, "Glog'na", Enums.Race.Alien, trait5, load("res://src/game/people/people_alien_1.png")))
@@ -126,27 +126,27 @@ func _init():
 	var trait6 = []
 	trait6.append(traitBuilder.build_trait(
 		"Hunter's Ears"
-		, "Shooting Comet moves erratically; hunting for the exotic beatles"
+		, "Shooting Comet moves erratically; hunting for the exotic beatles (Generate +3 Beatles)"
 		, Enums.TraitTypes.GENERATIVE_EFFECT
 		, Enums.ShipResources.BEATLES, 3))
 	trait6.append(traitBuilder.build_trait(
 		"Inconsiderate"
-		, "While on the hunt, the Shooting Comet has been known to consume leftovers on the ground"
+		, "While on the hunt, the Shooting Comet has been known to consume leftovers on the ground (Generate -1 Food)"
 		, Enums.TraitTypes.NEED
 		, Enums.ShipResources.FOOD, -1))
 	trait6.append(traitBuilder.build_trait(
 		"Power Hungry"
-		, "The Alien's appear to siphoning some power..."
+		, "The Alien's appear to siphoning some power... (-1 Power / cycle)"
 		, Enums.TraitTypes.NEED
 		, Enums.ShipResources.POWER, -1))
 	trait6.append(traitBuilder.build_trait(
 		"Song of my People"
-		, "The alure of the Beatle"
+		, "The alure of the Beatle (-1 Beatle / cycle)"
 		, Enums.TraitTypes.NEED
 		, Enums.ShipResources.BEATLES, -1))
 	trait6.append(traitBuilder.build_trait(
 		"Time Bomb"
-		, "The Alien's appear to siphoning some power..."
+		, "The Alien's appear to siphoning some power... (-1 Stress / cycle)"
 		, Enums.TraitTypes.NEED
 		, Enums.ShipResources.STRESS, -1))
 	persons.append(Build(6, "Shooting Comet", Enums.Race.Alien, trait6, load("res://src/game/people/people_alien_2.png")))
@@ -154,23 +154,23 @@ func _init():
 	var trait7 = []
 	trait7.append(traitBuilder.build_trait(
 		"Friendly Glutton"
-		, "Bob appears to have fresh Strawberries growing off of him!"
+		, "Bob appears to have fresh Strawberries growing off of him! (Generate +15 Food)"
 		, Enums.TraitTypes.GENERATIVE_EFFECT
 		, Enums.ShipResources.FOOD, 15))
 	trait7.append(traitBuilder.build_trait(
 		"Power Hog"
-		, "Bob appears absolutely ravenous for power"
+		, "Bob appears absolutely ravenous for power (-15 Power / cycle)"
 		, Enums.TraitTypes.NEED
 		, Enums.ShipResources.POWER
 		, -15))
 	trait7.append(traitBuilder.build_trait(
 		"Song of my People"
-		, "The alure of the Beatle"
+		, "The alure of the Beatle (-1 Beatle / cycle)"
 		, Enums.TraitTypes.NEED
 		, Enums.ShipResources.BEATLES, -1))
 	trait7.append(traitBuilder.build_trait(
 		"Time Bomb"
-		, "The Alien's appear to siphoning some power..."
+		, "The Alien's appear to siphoning some power... (-1 Stress / cycle)"
 		, Enums.TraitTypes.NEED
 		, Enums.ShipResources.STRESS, -1))
 	persons.append(Build(7, "Bob", Enums.Race.Alien, trait7, load("res://src/game/people/people_alien_3.png")))
