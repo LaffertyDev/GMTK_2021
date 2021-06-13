@@ -159,10 +159,10 @@ func _init():
 		, Enums.ShipResources.FOOD, 15))
 	trait7.append(traitBuilder.build_trait(
 		"Power Hog"
-		, "Bob appears absolutely ravenous for power (-15 Power / cycle)"
+		, "Bob appears absolutely ravenous for power (-10 Power / cycle)"
 		, Enums.TraitTypes.NEED
 		, Enums.ShipResources.POWER
-		, -15))
+		, -10))
 	trait7.append(traitBuilder.build_trait(
 		"Song of my People"
 		, "The alure of the Beatle (-1 Beatle / cycle)"

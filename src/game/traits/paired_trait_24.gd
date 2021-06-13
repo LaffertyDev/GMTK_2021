@@ -9,7 +9,7 @@ func _init():
 
 func apply_pair_effect(resourceManager: ResourceManager) -> void:
     resourceManager.human_stress_delta += 5
-    resourceManager.alien_stress_delta -= 5
+    resourceManager.alien_stress_delta += 5
 
 func apply_pair_effect_on_cycle(_personManager) -> void:
     pass
