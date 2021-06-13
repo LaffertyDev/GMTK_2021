@@ -7,13 +7,13 @@ const TraitBuilder = preload("res://src/game/traits/trait_builder.gd")
 var persons = []
 
 func _init():
-	persons.append(Build(1, "Human 1", Enums.Race.Human, [TraitBuilder.build_trait()], load("res://src/game/people/people_human_1.png")))
+	persons.append(Build(1, "Human 1", Enums.Race.Human, [TraitBuilder.build_trait("t", "d", Enums.TraitTypes.GENERATIVE_EFFECT, Enums.ShipResources.WATER, 1)], load("res://src/game/people/people_human_1.png")))
 	persons.append(Build(2, "Human 2", Enums.Race.Human, [], load("res://src/game/people/people_human_2.png")))
 	persons.append(Build(3, "Human 3", Enums.Race.Human, [], load("res://src/game/people/people_human_3.png")))
 	persons.append(Build(4, "Human 4", Enums.Race.Human, [], load("res://src/game/people/people_human_4.png")))
 	persons.append(Build(5, "Alien 1", Enums.Race.Alien, [], load("res://src/game/people/people_alien_1.png")))
 	persons.append(Build(6, "Alien 2", Enums.Race.Alien, [], load("res://src/game/people/people_alien_2.png")))
-	persons.append(Build(7, "Alien 3", Enums.Race.Alien, [], load("res://src/game/people/people_alien_3.png")))
+	persons.append(Build(7, "Alien 3", Enums.Race.Alien, [TraitBuilder.build_trait("Power Hog", "", Enums.TraitTypes.NEED, Enums.ShipResources.POWER, -15)], load("res://src/game/people/people_alien_3.png")))
 	persons.append(Build(8, "Robot 1", Enums.Race.Robot, [], load("res://src/game/people/people_robot_1.png")))
 	persons.append(Build(9, "Robot 2", Enums.Race.Robot, [], load("res://src/game/people/people_robot_1.png")))
 

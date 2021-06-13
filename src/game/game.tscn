@@ -33,10 +33,10 @@ __meta__ = {
 }
 
 [node name="resources" type="HBoxContainer" parent="Game_GUI"]
-margin_left = 271.799
-margin_top = 11.0156
-margin_right = 754.799
-margin_bottom = 195.016
+margin_left = 303.288
+margin_top = 10.1646
+margin_right = 786.288
+margin_bottom = 194.165
 custom_constants/separation = 15
 __meta__ = {
 "_edit_group_": true,
@@ -302,10 +302,10 @@ margin_bottom = 25.0
 text = "Mguffin"
 
 [node name="cycle_info" type="Label" parent="Game_GUI"]
-margin_left = 662.672
-margin_top = 516.833
-margin_right = 733.672
-margin_bottom = 534.833
+margin_left = 715.437
+margin_top = 518.536
+margin_right = 786.437
+margin_bottom = 536.536
 text = "Cycle: 1"
 __meta__ = {
 "_edit_use_anchors_": false
@@ -374,20 +374,20 @@ Max_Occupancy = 2
 Job_Texture = ExtResource( 8 )
 
 [node name="next_cycle_button" type="TextureButton" parent="Game_GUI"]
-margin_left = 703.25
-margin_top = 553.911
-margin_right = 735.25
-margin_bottom = 585.911
+margin_left = 756.015
+margin_top = 555.613
+margin_right = 788.015
+margin_bottom = 587.613
 texture_normal = ExtResource( 17 )
 __meta__ = {
 "_edit_use_anchors_": false
 }
 
 [node name="next_cycle_label" type="Label" parent="Game_GUI"]
-margin_left = 541.365
-margin_top = 560.823
-margin_right = 677.365
-margin_bottom = 578.823
+margin_left = 594.131
+margin_top = 562.525
+margin_right = 730.131
+margin_bottom = 580.525
 text = "Advance Cycle"
 __meta__ = {
 "_edit_use_anchors_": false
@@ -401,20 +401,20 @@ __meta__ = {
 }
 
 [node name="TextureRect" type="TextureRect" parent="Game_GUI/stars_charted"]
-margin_left = 518.05
-margin_top = 460.805
-margin_right = 550.05
-margin_bottom = 492.805
+margin_left = 570.816
+margin_top = 462.507
+margin_right = 602.816
+margin_bottom = 494.507
 texture = ExtResource( 18 )
 __meta__ = {
 "_edit_use_anchors_": false
 }
 
 [node name="stars_charted_label" type="Label" parent="Game_GUI/stars_charted"]
-margin_left = 556.388
-margin_top = 469.348
-margin_right = 733.388
-margin_bottom = 487.348
+margin_left = 609.154
+margin_top = 471.05
+margin_right = 786.154
+margin_bottom = 489.05
 text = "Stars Charted: 3/10"
 __meta__ = {
 "_edit_use_anchors_": false

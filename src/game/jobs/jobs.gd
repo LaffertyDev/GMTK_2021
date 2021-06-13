@@ -25,10 +25,22 @@ func _ready() -> void:
 	$HBoxContainer/job_label.set_text(Job_Title)
 
 func _on_assignment_changed():
+	var resourceManager = get_tree().get_nodes_in_group("game_root")[0].resource_manager
+	var personManager = get_tree().get_nodes_in_group("game_root")[0].person_manager
+	var assigned_persons = personManager.get_persons_assigned_to(Job_Type)
+	var pairedTraitManager = get_tree().get_nodes_in_group("game_root")[0].paired_trait_manager
+	if (assigned_persons.size() == 2):
+		var pairedTrait = pairedTraitManager.get_pair_effect(assigned_persons[0], assigned_persons[1])
+		pairedTrait.apply_pair_effect(resourceManager)
+		$paired_trait_display.set_paired_trait(pairedTrait)
+		$paired_trait_display.popup_centered()
+		$HBoxContainer/view_pair_effect_button.show()
+	else:
+		$HBoxContainer/view_pair_effect_button.hide()
+		$paired_trait_display.set_paired_trait(null)
 	emit_signal("job_assignment_changed")
 
 func adjust_resources(resourceManager: ResourceManager) -> void:
-
 	var affected_resources = TraitManager.get_resources_affected_by_job(Job_Type)
 	var personManager = get_tree().get_nodes_in_group("game_root")[0].person_manager
 	var assigned_persons = personManager.get_persons_assigned_to(Job_Type)
@@ -68,14 +80,6 @@ func adjust_resources(resourceManager: ResourceManager) -> void:
 				_:
 					print("UNKNOWN RESOURCE")
 
-	var pairedTraitManager = get_tree().get_nodes_in_group("game_root")[0].paired_trait_manager
-	if (assigned_persons.size() == 2):
-		var pairedTrait = pairedTraitManager.get_pair_effect(assigned_persons[0], assigned_persons[1])
-		pairedTrait.apply_pair_effect(resourceManager)
-		$paired_trait_display.set_paired_trait(pairedTrait)
-	else:
-		$paired_trait_display.set_paired_trait(null)
-
 func _on_cycle():
 	if (Job_Type == JobTypes.JobTypes.chart_stars):
 		var resourceManager = get_tree().get_nodes_in_group("game_root")[0].resource_manager
@@ -85,3 +89,6 @@ func _on_cycle():
 		if (assigned_persons.size() > 0):
 			resourceManager.stars_charted = min(resourceManager.stars_charted + 1, resourceManager.stars_charted_cap)
 			print(resourceManager.stars_charted)
+
+func _on_view_pair_effect_button_pressed():
+	$paired_trait_display.popup_centered()

@@ -11,3 +11,8 @@ enum ShipResources {
 	STRESS, # human shared with alien
 	MGUFFIN # alien unique
 }
+
+enum TraitTypes {
+    NEED, # always on
+    GENERATIVE_EFFECT # when they generate this resource
+}
