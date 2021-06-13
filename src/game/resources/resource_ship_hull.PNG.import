@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/resource_ship_hull.PNG-ee335ba01ed6c31a3cee1397a595c5e9.stex"
+path="res://.import/resource_ship_hull.png-a6f5a1315b986169fa1971a52f8332e5.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://src/game/resources/resource_ship_hull.PNG"
-dest_files=[ "res://.import/resource_ship_hull.PNG-ee335ba01ed6c31a3cee1397a595c5e9.stex" ]
+source_file="res://src/game/resources/resource_ship_hull.png"
+dest_files=[ "res://.import/resource_ship_hull.png-a6f5a1315b986169fa1971a52f8332e5.stex" ]
 
 [params]
 

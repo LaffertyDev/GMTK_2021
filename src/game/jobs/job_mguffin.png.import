@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/job_mguffin.PNG-63354cd476b00dcaade8b475c5e5c363.stex"
+path="res://.import/job_mguffin.png-82fddc59256e211e8e4766e3da16dd47.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://src/game/jobs/job_mguffin.PNG"
-dest_files=[ "res://.import/job_mguffin.PNG-63354cd476b00dcaade8b475c5e5c363.stex" ]
+source_file="res://src/game/jobs/job_mguffin.png"
+dest_files=[ "res://.import/job_mguffin.png-82fddc59256e211e8e4766e3da16dd47.stex" ]
 
 [params]
 

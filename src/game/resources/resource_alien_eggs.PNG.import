@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/resource_alien_eggs.PNG-4f5d8bfa212b02f14c69bb7f4ff14f2b.stex"
+path="res://.import/resource_alien_eggs.png-49a6b15b92ea9ba5eefa1c00de6b4842.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://src/game/resources/resource_alien_eggs.PNG"
-dest_files=[ "res://.import/resource_alien_eggs.PNG-4f5d8bfa212b02f14c69bb7f4ff14f2b.stex" ]
+source_file="res://src/game/resources/resource_alien_eggs.png"
+dest_files=[ "res://.import/resource_alien_eggs.png-49a6b15b92ea9ba5eefa1c00de6b4842.stex" ]
 
 [params]
 

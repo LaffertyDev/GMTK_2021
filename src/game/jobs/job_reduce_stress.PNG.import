@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/job_reduce_stress.PNG-25b589f1bafad55bf7743a3410b9c21c.stex"
+path="res://.import/job_reduce_stress.png-573b4c1d03648ca3c7d91e1b56835d57.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://src/game/jobs/job_reduce_stress.PNG"
-dest_files=[ "res://.import/job_reduce_stress.PNG-25b589f1bafad55bf7743a3410b9c21c.stex" ]
+source_file="res://src/game/jobs/job_reduce_stress.png"
+dest_files=[ "res://.import/job_reduce_stress.png-573b4c1d03648ca3c7d91e1b56835d57.stex" ]
 
 [params]
 
