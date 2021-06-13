@@ -24,4 +24,5 @@ func set_paired_trait(pairedTraitToSet: PairedTrait):
 
 func _on_cycle():
 	if (paired_trait != null):
-		paired_trait.apply_pair_effect_on_cycle()
+		var personManager = get_tree().get_nodes_in_group("game_root")[0].person_manager
+		paired_trait.apply_pair_effect_on_cycle(personManager)
