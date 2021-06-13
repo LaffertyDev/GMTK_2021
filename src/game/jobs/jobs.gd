@@ -30,9 +30,10 @@ func _on_assignment_changed():
 	var pairedTraitManager = get_tree().get_nodes_in_group("game_root")[0].paired_trait_manager
 	if (assigned_persons.size() == 2):
 		var pairedTrait = pairedTraitManager.get_pair_effect(assigned_persons[0], assigned_persons[1])
-		$paired_trait_display.set_paired_trait(pairedTrait)
-		$paired_trait_display.popup_centered()
-		$HBoxContainer/view_pair_effect_button.show()
+		if pairedTrait != null:
+			$paired_trait_display.set_paired_trait(pairedTrait)
+			$paired_trait_display.popup_centered()
+			$HBoxContainer/view_pair_effect_button.show()
 	else:
 		$HBoxContainer/view_pair_effect_button.hide()
 		$paired_trait_display.set_paired_trait(null)
