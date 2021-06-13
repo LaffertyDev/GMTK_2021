@@ -1,5 +1,6 @@
-[gd_scene load_steps=2 format=2]
+[gd_scene load_steps=3 format=2]
 
+[ext_resource path="res://src/game/ui_assets/game_theme.tres" type="Theme" id=1]
 [ext_resource path="res://src/game/jobs/job_assignment_slot.gd" type="Script" id=2]
 
 [node name="Control" type="Control"]
@@ -8,6 +9,7 @@ anchor_bottom = 1.0
 margin_right = -447.0
 margin_bottom = -568.0
 rect_min_size = Vector2( 320, 32 )
+theme = ExtResource( 1 )
 script = ExtResource( 2 )
 __meta__ = {
 "_edit_use_anchors_": false
@@ -21,7 +23,7 @@ __meta__ = {
 }
 
 [node name="button_assign" type="Button" parent="HBoxContainer"]
-margin_right = 54.0
+margin_right = 72.0
 margin_bottom = 32.0
 text = "Assign"
 
