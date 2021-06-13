@@ -23,3 +23,5 @@ https://www.kenney.nl/assets/ui-pack
 https://opengameart.org/content/20-planet-sprites
 
 https://opengameart.org/content/vegastrike-portraits
+
+https://opengameart.org/content/3-layer-parallax-star-and-nebula-field
