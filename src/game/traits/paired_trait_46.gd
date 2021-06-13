@@ -11,5 +11,5 @@ func apply_pair_effect(resourceManager: ResourceManager) -> void:
     resourceManager.alien_stress_delta += 2
     resourceManager.human_stress_delta += 2
 
-func apply_pair_effect_on_cycle() -> void:
+func apply_pair_effect_on_cycle(_personManager) -> void:
     pass

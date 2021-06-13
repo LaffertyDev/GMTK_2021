@@ -312,10 +312,10 @@ __meta__ = {
 }
 
 [node name="jobs" type="GridContainer" parent="Game_GUI"]
-margin_left = 133.159
-margin_top = 208.312
-margin_right = 937.159
-margin_bottom = 1243.31
+margin_left = 70.1586
+margin_top = 202.312
+margin_right = 874.159
+margin_bottom = 1252.31
 custom_constants/vseparation = 15
 columns = 2
 __meta__ = {

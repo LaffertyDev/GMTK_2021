@@ -10,5 +10,5 @@ func _init():
 func apply_pair_effect(resourceManager: ResourceManager) -> void:
     resourceManager.alien_power_delta += 15
 
-func apply_pair_effect_on_cycle() -> void:
+func apply_pair_effect_on_cycle(_personManager) -> void:
     pass

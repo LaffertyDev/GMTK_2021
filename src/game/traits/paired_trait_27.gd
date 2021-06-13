@@ -11,5 +11,5 @@ func apply_pair_effect(resourceManager: ResourceManager) -> void:
     resourceManager.human_water_delta += 5
     resourceManager.human_food_delta += 5
 
-func apply_pair_effect_on_cycle() -> void:
+func apply_pair_effect_on_cycle(_personManager) -> void:
     pass
